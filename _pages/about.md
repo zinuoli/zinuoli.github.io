@@ -19,7 +19,7 @@ redirect_from:
 
 # 👤 About Me
 
-<font size="4">I am currently a first-year PhD student at the University of Western Australia under the supervision of <a href="https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun">Prof.Mohammed Bennamoun</a>, <a href="https://research-repository.uwa.edu.au/en/persons/farid-boussaid">Prof.Farid Boussaid</a> and <a href="https://research.monash.edu/en/persons/qiuhong-ke">Dr.Qiuhong Ke</a>. My research interest includes Generative Models and Computer Vision. I love animation, so I am trying to do some ACG-related works now.</font>
+<font size="4">I am currently a first-year PhD student at the University of Western Australia under the supervision of <a href="https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun">Prof.Mohammed Bennamoun</a>, <a href="https://research-repository.uwa.edu.au/en/persons/farid-boussaid">Prof.Farid Boussaid</a> and <a href="https://research.monash.edu/en/persons/qiuhong-ke">Dr.Qiuhong Ke</a>. My research interest includes Generative Models and Computer Vision, I am also looking for ACG-related topics.</font>
 <!--I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).-->
 <!--# 🔥 News
 - *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
@@ -27,7 +27,7 @@ redirect_from:
 
 
 # 📝 Selected Publications
-†: corresponding author; *:equal contribution
+*:equal contribution; †: corresponding author
 
 <!-- SD7K -->
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2023</div><img src='images/sd7k.jpg' alt="sym" width="100%"></div></div>
@@ -35,7 +35,7 @@ redirect_from:
 
 **High-resolution Document Shadow Removal via A Large-scale Real-world Dataset and A Frequency-aware Shadow Erasing Net.**
 
-**Zinuo Li\***, Xuhang Chen\*, Chi-Man Pun, Xiaodong Cun.
+**Zinuo Li\***, Xuhang Chen\*, Chi-Man Pun† and Xiaodong Cun†.
 
 [**[Paper]**](https://arxiv.org/abs/2308.14221)&nbsp;
 [**[Code]**](https://github.com/CXH-Research/DocShadow-SD7K)
@@ -50,13 +50,13 @@ redirect_from:
 
 **A Large-scale Film Style Dataset for Learning Multi-frequency Driven Film Enhancement.**
 
-**Zinuo Li\***, Xuhang Chen\*, Chi-Man Pun and Shuqiang Wang.
+**Zinuo Li\***, Xuhang Chen\*, Chi-Man Pun† and Shuqiang Wang†.
 
 [**[Paper]**](https://arxiv.org/abs/2301.08880)&nbsp;
 [**[Code]**](https://github.com/CXH-Research/FilmNet)
 </div>
 </div>
-<!-- SD7K -->
+<!-- FilmNet -->
 
 
 # 🎖 Honors and Awards
