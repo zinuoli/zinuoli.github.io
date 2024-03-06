@@ -59,6 +59,21 @@ redirect_from:
 <!-- FilmNet -->
 
 
+<!-- Devignet -->
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2024</div><img src='images/devignet.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Devignet: High-Resolution Vignetting Removal via a Dual Aggregated Fusion Transformer With Adaptive Channel Expansion.**
+
+Shenghong Luo‍* , Xuhang Chen* , Weiwen Chen , **Zinuo Li** , Shuqiang Wang† and Chi-Man Pun†.
+
+[**[Paper]**](https://arxiv.org/abs/2308.13739)&nbsp;
+[**[Code]**](https://github.com/CXH-Research/DeVigNet)
+</div>
+</div>
+<!-- Devignet -->
+
+
 # 🎖 Honors and Awards
 <!--- *2024.03*, UWA Full scholarship.-->
 - UWA Full scholarship.
