@@ -17,6 +17,8 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
+# 👤 About me
+
 <font size="4">**I am currently a first-year PhD student at the University of Western Australia under the supervision of <a href="https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun">Prof.Mohammed Bennamoun</a>, <a href="https://research-repository.uwa.edu.au/en/persons/farid-boussaid">Prof.Farid Boussaid</a> and <a href="https://research.monash.edu/en/persons/qiuhong-ke">Dr.Qiuhong Ke</a>. My research interest includes Generative Models and Computer Vision.**</font>
 <!--I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).-->
 <!--# 🔥 News
