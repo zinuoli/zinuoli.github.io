@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Zinuo Li (李梓诺)"
+title: "Zinuo Li"
 excerpt: ""
 author_profile: true
 redirect_from: 
