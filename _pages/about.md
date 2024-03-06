@@ -27,7 +27,7 @@ redirect_from:
 
 
 # 📝 Selected Publications
-*:equal contribution; †: corresponding author
+*:Equal Contribution; †: Corresponding Author
 
 <!-- SD7K -->
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2023</div><img src='images/sd7k.jpg' alt="sym" width="100%"></div></div>
