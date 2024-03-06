@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Zinuo Li(李梓诺)"
+title                    : "Zinuo Li (李梓诺)"
 description              : ""
 repository               : ""
 google_scholar_stats_use_cdn : true
@@ -21,7 +21,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Zinuo Li(李梓诺)"
+  name             : "Zinuo Li (李梓诺)"
   avatar           : "images/zinuo.jpg"
   bio              : "PhD student@UWA"
   location         : "Perth, Australia"
