@@ -19,7 +19,7 @@ redirect_from:
 
 # 👤 About Me
 
-<font size="4">I am currently a first-year Ph.D. student at the University of Western Australia (UWA) advised by <a href='https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun'>Prof.Mohammed Bennamoun</a>, <a href='https://research-repository.uwa.edu.au/en/persons/farid-boussaid'>Prof.Farid Boussaid</a> and <a href='https://research.monash.edu/en/persons/qiuhong-ke'>Dr.Qiuhong Ke</a>. My research interests include Parameter Efficient Fine Tuning (Especially on Diffusion Model) in various application, e.g. Model Generalization, AIGC-related Topics, Image/Video Restoration, etc. I love anime so I am also looking for ACG-related topics.</font>
+<font size="4">I am currently a first-year Ph.D. student in Computer Science at the University of Western Australia (UWA) advised by <a href='https://research-repository.uwa.edu.au/en/persons/mohammed-bennamoun'>Prof.Mohammed Bennamoun</a>, <a href='https://research-repository.uwa.edu.au/en/persons/farid-boussaid'>Prof.Farid Boussaid</a> and <a href='https://research.monash.edu/en/persons/qiuhong-ke'>Dr.Qiuhong Ke</a>. My research interests include Parameter Efficient Fine Tuning (Especially on Diffusion Model) in various application, e.g. Model Generalization, AIGC-related Topics, Image/Video Restoration, etc. I love anime so I am also looking for ACG-related topics.</font>
 <!--I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).-->
 <!--# 🔥 News
 - *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
@@ -79,10 +79,10 @@ Shenghong Luo‍* , Xuhang Chen* , Weiwen Chen , **Zinuo Li** , Shuqiang Wang†
 - UWA Full scholarship.
 
 
-# 📖 Educations
+<!-- # 📖 Educations
 - *PhD in Computer Science*, University of Western Australia.
 - *Research Assistant*,  University of Macau.
-- *Research Assistant*,  Chinese Academy of Sciences, SIAT Shenzhen.
+- *Research Assistant*,  Chinese Academy of Sciences, SIAT Shenzhen. -->
 
 
 <!--# 💬 Invited Talks
