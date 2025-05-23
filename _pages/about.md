@@ -76,9 +76,9 @@ Shenghong Luo‍* , Xuhang Chen* , Weiwen Chen , **Zinuo Li** , Shuqiang Wang†
 <!-- Devignet -->
 
 
-# 🎖 Honors and Awards
+<!--# 🎖 Honors and Awards -->
 <!--- *2024.03*, UWA Full scholarship.-->
-- UWA Full scholarship.
+<!-- - UWA Full scholarship.-->
 
 
 <!-- # 📖 Educations
