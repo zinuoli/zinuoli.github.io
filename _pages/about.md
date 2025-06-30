@@ -52,7 +52,7 @@ redirect_from:
 
 **A Large-scale Film Style Dataset for Learning Multi-frequency Driven Film Enhancement.**
 
-**Zinuo Li\***, Xuhang Chen\*, Chi-Man Pun† and Shuqiang Wang†.
+**Zinuo Li\***, Xuhang Chen\*, Chi-Man Pun† and Shuqiang Wang†
 
 [**[Paper]**](https://arxiv.org/abs/2301.08880)&nbsp;
 [**[Code]**](https://github.com/CXH-Research/FilmNet)
@@ -67,13 +67,29 @@ redirect_from:
 
 **Devignet: High-Resolution Vignetting Removal via a Dual Aggregated Fusion Transformer With Adaptive Channel Expansion.**
 
-Shenghong Luo‍* , Xuhang Chen* , Weiwen Chen , **Zinuo Li** , Shuqiang Wang† and Chi-Man Pun†.
+Shenghong Luo‍* , Xuhang Chen* , Weiwen Chen , **Zinuo Li** , Shuqiang Wang† and Chi-Man Pun†
 
 [**[Paper]**](https://arxiv.org/abs/2308.13739)&nbsp;
 [**[Code]**](https://github.com/CXH-Research/DeVigNet)
 </div>
 </div>
 <!-- Devignet -->
+
+# 📝 Arxiv Papers
+*:Equal Contribution; †: Corresponding Author
+<!-- TriSense -->
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/trisense.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM**
+
+**Zinuo Li**, Xian Zhang, Yongxin Guo, Mohammed Bennamoun, Farid Boussaid, Girish Dwivedi, Luqi Gong†, Qiuhong Ke†
+
+[**[Paper]**](https://arxiv.org/pdf/2505.18110)&nbsp;
+[**[Code]**](https://github.com/zinuoli/TriSense)
+</div>
+</div>
+<!-- TriSense -->
 
 
 <!--# 🎖 Honors and Awards -->
