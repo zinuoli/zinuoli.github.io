@@ -35,9 +35,9 @@ redirect_from:
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2023</div><img src='images/sd7k.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**High-resolution Document Shadow Removal via A Large-scale Real-world Dataset and A Frequency-aware Shadow Erasing Net.**
+**High-resolution Document Shadow Removal via A Large-scale Real-world Dataset and A Frequency-aware Shadow Erasing Net**
 
-**Zinuo Li\***, Xuhang Chen\*, Chi-Man Pun† and Xiaodong Cun†.
+**Zinuo Li\***, Xuhang Chen\*, Chi-Man Pun† and Xiaodong Cun†
 
 [**[Paper]**](https://arxiv.org/abs/2308.14221)&nbsp;
 [**[Code]**](https://github.com/CXH-Research/DocShadow-SD7K)
@@ -50,7 +50,7 @@ redirect_from:
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">IJCAI 2023</div><img src='images/filmset.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**A Large-scale Film Style Dataset for Learning Multi-frequency Driven Film Enhancement.**
+**A Large-scale Film Style Dataset for Learning Multi-frequency Driven Film Enhancement**
 
 **Zinuo Li\***, Xuhang Chen\*, Chi-Man Pun† and Shuqiang Wang†
 
@@ -65,7 +65,7 @@ redirect_from:
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2024</div><img src='images/devignet.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-**Devignet: High-Resolution Vignetting Removal via a Dual Aggregated Fusion Transformer With Adaptive Channel Expansion.**
+**Devignet: High-Resolution Vignetting Removal via a Dual Aggregated Fusion Transformer With Adaptive Channel Expansion**
 
 Shenghong Luo‍* , Xuhang Chen* , Weiwen Chen , **Zinuo Li** , Shuqiang Wang† and Chi-Man Pun†
 
@@ -83,7 +83,7 @@ Shenghong Luo‍* , Xuhang Chen* , Weiwen Chen , **Zinuo Li** , Shuqiang Wang†
 
 **Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM**
 
-**Zinuo Li**, Xian Zhang, Yongxin Guo, Mohammed Bennamoun, Farid Boussaid, Girish Dwivedi, Luqi Gong†, Qiuhong Ke†
+**Zinuo Li**, Xian Zhang, Yongxin Guo, Mohammed Bennamoun, Farid Boussaid, Girish Dwivedi, Luqi Gong† and Qiuhong Ke†
 
 [**[Paper]**](https://arxiv.org/pdf/2505.18110)&nbsp;
 [**[Code]**](https://github.com/zinuoli/TriSense)
