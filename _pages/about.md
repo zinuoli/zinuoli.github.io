@@ -19,7 +19,7 @@ redirect_from:
 
 # 👤 About Me
 
-<font size="4">I am currently a first-year Ph.D. student in Computer Science at the <a href='https://www.uwa.edu.au/schools/physics-mathematics-computing/department-of-computer-science-and-software-engineering'>University of Western Australia (UWA)</a> advised by <a href='https://scholar.google.com.au/citations?user=ylX5MEAAAAAJ&hl=en'>Prof.Mohammed Bennamoun</a>, <a href='https://scholar.google.com.au/citations?user=SacY05oAAAAJ&hl=en'>Prof.Farid Boussaid</a>, jointly advised by <a href='https://scholar.google.com/citations?user=84qxdhsAAAAJ&hl=zh-CN'>Dr.Qiuhong Ke</a> at <a href='https://www.monash.edu/it/about-us'>Monash University</a>. My research interests include Video Understanding, Multimodal Large Language Models (MLLMs), Model Generalization, Image/Video Restoration, etc. I love anime so I am also looking for ACG-related topics. </font>
+<font size="4">I am currently a second-year Ph.D. student in Computer Science at the <a href='https://www.uwa.edu.au/schools/physics-mathematics-computing/department-of-computer-science-and-software-engineering'>University of Western Australia (UWA)</a> advised by <a href='https://scholar.google.com.au/citations?user=ylX5MEAAAAAJ&hl=en'>Prof.Mohammed Bennamoun</a>, <a href='https://scholar.google.com.au/citations?user=SacY05oAAAAJ&hl=en'>Prof.Farid Boussaid</a>, jointly advised by <a href='https://scholar.google.com/citations?user=84qxdhsAAAAJ&hl=zh-CN'>Dr.Qiuhong Ke</a> at <a href='https://www.monash.edu/it/about-us'>Monash University</a>. My research interests include Video Understanding, Multimodal Large Language Models (MLLMs), Model Generalization, Image/Video Restoration, etc. I love anime so I am also looking for ACG-related topics. </font>
 <!--<br /><br />We are actively collaborating with one of the top media companies in the Middle East on several cutting-edge projects in video analysis and related areas, if you are interested, please check it via <a href='https://www.linkedin.com/posts/mohammed-bennamoun-b3147174_expression-of-interest-i-am-collaborating-activity-7268962972088061953-PdLK/?utm_source=share&utm_medium=member_desktop'>this link.</a>
 </font>-->
 <!--I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).-->
@@ -29,6 +29,18 @@ redirect_from:
 
 
 # 📝 Selected Publications
+<!-- TriSense -->
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/trisense.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+**Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM**
+
+**Zinuo Li**, Xian Zhang, Yongxin Guo, Mohammed Bennamoun, Farid Boussaid, Girish Dwivedi, Luqi Gong and Qiuhong Ke
+
+[**[Paper]**](https://arxiv.org/pdf/2505.18110)&nbsp;
+[**[Code]**](https://github.com/zinuoli/TriSense)
+</div>
+</div>
 
 <!-- SD7K -->
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICCV 2023</div><img src='images/sd7k.jpg' alt="sym" width="100%"></div></div>
@@ -73,31 +85,16 @@ Shenghong Luo‍ , Xuhang Chen , Weiwen Chen , **Zinuo Li** , Shuqiang Wang and 
 </div>
 <!-- Devignet -->
 
-# 📝 Arxiv Papers
-<!-- TriSense -->
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arxiv</div><img src='images/trisense.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-**Watch and Listen: Understanding Audio-Visual-Speech Moments with Multimodal LLM**
-
-**Zinuo Li**, Xian Zhang, Yongxin Guo, Mohammed Bennamoun, Farid Boussaid, Girish Dwivedi, Luqi Gong and Qiuhong Ke
-
-[**[Paper]**](https://arxiv.org/pdf/2505.18110)&nbsp;
-[**[Code]**](https://github.com/zinuoli/TriSense)
-</div>
-</div>
-<!-- TriSense -->
-
 
 <!--# 🎖 Honors and Awards -->
 <!--- *2024.03*, UWA Full scholarship.-->
 <!-- - UWA Full scholarship.-->
 
 
-<!-- # 📖 Educations
-- *PhD in Computer Science*, University of Western Australia.
-- *Research Assistant*,  University of Macau.
-- *Research Assistant*,  Chinese Academy of Sciences, SIAT Shenzhen. -->
+# 📖 Experiences
+- *PhD in Computer Science*, University of Western Australia. 2024-Current.
+- *Research Assistant*,  University of Macau. 2022-2024.
+- *Research Assistant*,  Chinese Academy of Sciences, SIAT Shenzhen. 2022-2024.
 
 
 <!--# 💬 Invited Talks
