@@ -64,6 +64,7 @@ redirect_from:
 **A Large-scale Film Style Dataset for Learning Multi-frequency Driven Film Enhancement**
 
 **Zinuo Li**, Xuhang Chen, Chi-Man Pun and Shuqiang Wang
+
 [**[Paper]**](https://arxiv.org/abs/2301.08880)&nbsp;
 [**[Code]**](https://github.com/CXH-Research/FilmNet)
 </div>
