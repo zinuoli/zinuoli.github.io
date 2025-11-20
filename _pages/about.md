@@ -27,6 +27,11 @@ redirect_from:
 - *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
 - *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. -->
 
+# 📖 Experiences
+- *Internship at <a href='https://open.youtu.qq.com'>Tencent Youtu Lab</a>. 2025-Current.
+- *PhD in Computer Science*, University of Western Australia. 2024-Current.
+- *Research Assistant*,  University of Macau. 2022-2024.
+- *Research Assistant*,  Chinese Academy of Sciences, SIAT Shenzhen. 2022-2024.
 
 # 📝 Selected Publications
 <!-- TriSense -->
@@ -90,12 +95,6 @@ Shenghong Luo‍ , Xuhang Chen , Weiwen Chen , **Zinuo Li** , Shuqiang Wang and 
 <!--# 🎖 Honors and Awards -->
 <!--- *2024.03*, UWA Full scholarship.-->
 <!-- - UWA Full scholarship.-->
-
-
-# 📖 Experiences
-- *PhD in Computer Science*, University of Western Australia. 2024-Current.
-- *Research Assistant*,  University of Macau. 2022-2024.
-- *Research Assistant*,  Chinese Academy of Sciences, SIAT Shenzhen. 2022-2024.
 
 
 <!--# 💬 Invited Talks
