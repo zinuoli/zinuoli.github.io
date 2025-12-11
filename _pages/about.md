@@ -18,7 +18,7 @@ social: true # includes social icons at the bottom of the page
 ---
 
 
-I am currently a second-year Ph.D. student in Computer Science at the [University of Western Australia (UWA)](https://www.uwa.edu.au/schools/physics-mathematics-computing/department-of-computer-science-and-software-engineering) advised by [Prof. Mohammed Bennamoun](https://scholar.google.com.au/citations?user=ylX5MEAAAAAJ&hl=en), [Prof. Farid Boussaid](https://scholar.google.com.au/citations?user=SacY05oAAAAJ&hl=en), jointly advised by [Dr. Qiuhong Ke](https://scholar.google.com/citations?user=84qxdhsAAAAJ&hl=zh-CN) at [Monash University](https://www.monash.edu/it/about-us). I am also a Research Intern at [Tencent YouTu Lab](https://ai.tencent.com/ailab/en/index/), working on cutting-edge multimodal AI research.
+I am currently a second-year Ph.D. student in Computer Science at the [University of Western Australia (UWA)](https://www.uwa.edu.au/schools/physics-mathematics-computing/department-of-computer-science-and-software-engineering) advised by Prof. Mohammed Bennamoun, Prof. Farid Boussaid, jointly advised by Dr. Qiuhong Ke at Monash University. I am also a Research Intern at [Tencent YouTu Lab](https://ai.tencent.com/ailab/en/index/), working on cutting-edge multimodal AI research.
 
 My research focuses on advancing Video Understanding and Multimodal Large Language Models (MLLMs), with particular interests in Agentic Reinforcement Learning and Visual Reasoning. Beyond research, I love anime and am passionate about exploring ACG-related AI topics, feel free to contact me if you have any similar interests and ideas.
 
