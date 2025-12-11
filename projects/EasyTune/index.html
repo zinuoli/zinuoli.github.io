@@ -1,0 +1,331 @@
+<style>
+  .tldr {
+    text-align: left;
+    font-size: 0.9em;          /* 比正文略大，温和突出 */
+    color: #33333389;            /* 深灰色，稳重且专业 */
+    font-style: italic;        /* 斜体正文，区分正文 */
+  }
+</style>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>EasyTune: Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation</title>
+  <link rel="icon" type="image/x-icon" href="">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">EasyTune: Efficient Step-Aware Fine-Tuning for Diffusion-Based Motion Generation</h1>
+            <div class="is-size-5 publication-authors">
+              <p class="tldr" style="max-width: 85%; margin: 0 auto;">
+                <strong>TL;DR:</strong> We propose EasyTune, a fine-tuning framework for diffusion models that decouples recursive dependencies and enables (1) dense and effective optimization, (2) memory-efficient training, and (3) fine-grained alignment.
+              </p>
+              <!-- Paper authors -->            
+               <!-- 
+              <span class="author-block">
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+                -->
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- End paper abstract -->
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3"> Performance -- Better Quality and More Efficient </h2>
+      <img style="width: 100%; height: auto; display: block; margin: 0 auto;" src="static/images/intro.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-left">
+        <p><strong>Comparison of the training costs and generation performance on HumanML3D. </strong> 
+(a) Performance comparison of different fine-tuning methods. 
+(b) Generalization performance across six pre-trained diffusion-based models.      </h2>
+      <br>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          </p>
+          <p>
+            In recent years, motion generative models have undergone significant advancement, yet pose challenges in aligning with downstream objectives. Recent studies have shown that using differentiable rewards to directly align the preference of diffusion models yields promising results. However, these methods suffer from inefficient and coarse-grained optimization with high memory consumption. In this work, we first theoretically identify the \emph{fundamental reason} of these limitations: the recursive dependence between different steps in the denoising trajectory. Inspired by this insight, we propose \textbf{EasyTune}, which fine-tunes diffusion at each denoising step rather than over the entire trajectory.  This decouples the recursive dependence, allowing us to perform (1) a dense and effective, (2) memory-efficient, and (3) fine-grained optimization. Furthermore, the scarcity of preference motion pairs restricts the availability of motion reward model training. To this end, we further introduce a \textbf{S}elf-refinement \textbf{P}reference \textbf{L}earning (\textbf{SPL}) mechanism that dynamically identifies preference pairs and conducts preference learning. Extensive experiments demonstrate that EasyTune outperforms ReFL by 62.1\% in MM-Dist improvement while requiring only 34.5\% of its additional memory overhead.  
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Image carousel -->
+<section class="hero teaser" style="margin-top: 3rem;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <br>
+      <h2 class="title is-3">Framework </h2>
+      <img src="static/images/framework.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-left">
+        <p><strong>The framework of existing differentiable reward-based methods (left) and our proposed EasyTune (right).</strong>  Existing methods backpropagate the gradients of the reward model through the overall denoising process, resulting in (1) excessive memory, (2) inefficient, and (3) coarse-grained optimization. In contrast, EasyTune optimizes the diffusion model by directly backpropagating the gradients at each denoising step, overcoming these issues.</p>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Image carousel -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <br>
+      <h2 class="title is-3">Core Insight </h2>
+      <img src="static/images/insight.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-left">
+        <p><strong>Core insight of EasyTune.</strong> 
+        Core insight of EasyTune. By replacing the recursive gradient in Eq.(4) with the formulation in Eq.(7), EasyTune decouples the recursive dependence of computation graph, enabling (1) step-wise graph storage, (2) efficient per-step optimization, and (3) fine-grained parameter optimization.</p>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser" style="margin-top: 3rem;">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3">Experiment Results </h2>
+      <br>
+      <h2 class="subtitle has-text-left">
+        <p><strong>Comparison of SoTA fine-tuning methods on HumanML3D dataset.</strong> 
+        The arrows 
+        <span style="font-family: 'Cambria Math', 'STIXGeneral', serif;">↑</span>, 
+        <span style="font-family: 'Cambria Math', 'STIXGeneral', serif;">↓</span>, and 
+        <span style="font-family: 'Cambria Math', 'STIXGeneral', serif;">→</span> 
+        indicate higher, lower, and closer-to-real-motion values are better, respectively. 
+        <b>Bold</b> and <u>underline</u> highlight the best and second-best results. 
+        Percentages in subscripts indicate improvements.</p>
+      </h2>
+      <img style="width: 100%; height: auto; display: block; margin: 0 auto;" src="static/images/t1.png" alt="MY ALT TEXT"/>
+      
+      <br>
+
+      <h2 class="subtitle has-text-left">
+      <p><strong>Comparison of text-to-motion generation performance on the HumanML3D dataset.</strong> 
+      </h2>
+      <img style="width: 100%; height: auto; display: block; margin: 0 auto;" src="static/images/t2.png" alt="MY ALT TEXT"/>
+
+      <br>
+
+      <h2 class="subtitle has-text-left">
+        <p><strong>Evaluation on Text-Motion Retrieval Benchmark, HumanML3D and KIT-ML.</strong> 
+          The column “Noise”  indicates whether the method can handle noisy motion from the denoising process.
+      </h2>
+      <img style="width: 100%; height: auto; display: block; margin: 0 auto;" src="static/images/t3.png" alt="MY ALT TEXT"/>
+
+      <br>
+
+      <h2 class="subtitle has-text-left">
+         <p><strong>Performance enhancement of diffusion-based motion generation methods with our Easytune. 
+        </strong>  
+      </h2>
+      <img style="width: 60%; height: auto; display: block; margin: 0 auto;" src="static/images/t4.png" alt="MY ALT TEXT"/>
+      <br>
+
+      <h2 class="subtitle has-text-left">
+        <p><strong>Comparison of SoTA fine-tuning methods on KIT-ML dataset.</strong> 
+      </h2>
+      <img style="width: 60%; height: auto; display: block; margin: 0 auto;" src="static/images/t5.png" alt="MY ALT TEXT"/>
+
+      <br>
+      <br>
+
+
+      <img style="width: 100%; height: auto; display: block; margin: 0 auto;" src="static/images/fig_exp.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-left">
+        <p><strong>Loss curves for EasyTune and existing fine-tuning methods (Left). Comparison of winning rates % for diffusion models fine-tuned with and without SPL (Right).</strong> 
+         In the left figure, the x-axis represents the number of generated motion batches.
+      </h2>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Image carousel -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3">Visual results on HumanML3D dataset</h2>
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/vis.png" alt="MY ALT TEXT"/ style="width: 80%; height: auto; display: block; margin: 0 auto;" >
+        <h2 class="subtitle has-text-centered" style="width: 80%; height: auto; display: block; margin: 0 auto;" >
+          Visual results on HumanML3D dataset. "w/o EasyTune" refers to motions generated by the original MLD model, while "w/ EasyTune" indicates motions generated by the MLD model fine-tuned using our proposed EasyTune.
+        </h2>
+      </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3">Visualizations</h2>
+      <div class="video-list">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop>
+            <source src="static/videos/192.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop>
+            <source src="static/videos/247.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop>
+            <source src="static/videos/307.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video4">
+          <video poster="" id="video4" autoplay controls muted loop>
+            <source src="static/videos/444.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video5">
+          <video poster="" id="video5" autoplay controls muted loop>
+            <source src="static/videos/1125.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video6">
+          <video poster="" id="video6" autoplay controls muted loop>
+            <source src="static/videos/1253.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video7">
+          <video poster="" id="video7" autoplay controls muted loop>
+            <source src="static/videos/1423.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video8">
+          <video poster="" id="video8" autoplay controls muted loop>
+            <source src="static/videos/1535.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video9">
+          <video poster="" id="video9" autoplay controls muted loop>
+            <source src="static/videos/2279.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video10">
+          <video poster="" id="video10" autoplay controls muted loop>
+            <source src="static/videos/2943.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video11">
+          <video poster="" id="video11" autoplay controls muted loop>
+            <source src="static/videos/4626.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video12">
+          <video poster="" id="video12" autoplay controls muted loop>
+            <source src="static/videos/4646.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
