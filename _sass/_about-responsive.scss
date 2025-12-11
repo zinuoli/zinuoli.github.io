@@ -239,6 +239,19 @@
       .row {
         flex-direction: column;
       }
+
+      .col-sm-2 {
+        max-width: 100%;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+
+        .preview {
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+        }
+      }
     }
 
     .title {
