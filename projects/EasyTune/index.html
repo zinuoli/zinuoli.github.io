@@ -128,7 +128,6 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          </p>
           <p>
             In recent years, motion generative models have undergone significant advancement, yet pose challenges in aligning with downstream objectives. Recent studies have shown that using differentiable rewards to directly align the preference of diffusion models yields promising results. However, these methods suffer from inefficient and coarse-grained optimization with high memory consumption. In this work, we first theoretically identify the \emph{fundamental reason} of these limitations: the recursive dependence between different steps in the denoising trajectory. Inspired by this insight, we propose \textbf{EasyTune}, which fine-tunes diffusion at each denoising step rather than over the entire trajectory.  This decouples the recursive dependence, allowing us to perform (1) a dense and effective, (2) memory-efficient, and (3) fine-grained optimization. Furthermore, the scarcity of preference motion pairs restricts the availability of motion reward model training. To this end, we further introduce a \textbf{S}elf-refinement \textbf{P}reference \textbf{L}earning (\textbf{SPL}) mechanism that dynamically identifies preference pairs and conducts preference learning. Extensive experiments demonstrate that EasyTune outperforms ReFL by 62.1\% in MM-Dist improvement while requiring only 34.5\% of its additional memory overhead.  
           </p>
