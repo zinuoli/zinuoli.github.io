@@ -3,7 +3,7 @@ layout: page
 permalink: /Publications/
 title: Publications
 description:
-nav: true
+nav: false
 nav_order: 2
 _styles: |
   /* ========== Publications 页面样式 - 美化增强版 ========== */
@@ -935,6 +935,20 @@ _styles: |
 
 <div class="publications">
 
-{% bibliography %}
+<!-- Action Recognition -->
+<h2 class="bibliography">Action Recognition</h2>
+{% bibliography --query @*[keywords ^= *Action Recognition*] %}
+
+<!-- Video Understanding -->
+<h2 class="bibliography">Video Understanding</h2>
+{% bibliography --query @*[keywords ^= *Video Understanding*] %}
+
+<!-- Image/Video Generation -->
+<h2 class="bibliography">Image/Video Generation</h2>
+{% bibliography --query @*[keywords ^= *Video Generation*] || @*[keywords ^= *Image Generation*] %}
+
+<!-- Other Publications -->
+<h2 class="bibliography">Other Publications</h2>
+{% bibliography --query @*[keywords !^= *Action Recognition*][keywords !^= *Video Understanding*][keywords !^= *Video Generation*][keywords !^= *Image Generation*] %}
 
 </div>
