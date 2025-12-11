@@ -1,0 +1,90 @@
+// ========== Teaching Assistant Styles ==========
+
+.teaching-section {
+  margin-bottom: 0.6rem;
+  max-height: 160px;
+  overflow-y: auto;
+  padding-right: 6px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
+
+    &:hover {
+      background: #bdbdbd;
+    }
+  }
+}
+
+.teaching-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 0.35rem 0 0.35rem 1.6rem;
+    margin-bottom: 0.25rem;
+    border-left: 2px solid rgba(52, 152, 219, 0.6);
+    transition: all 0.3s ease;
+    position: relative;
+    background: rgba(52, 152, 219, 0.03);
+    border-radius: 0 6px 6px 0;
+
+    &::before {
+      content: '📚';
+      position: absolute;
+      left: 0.3rem;
+      top: 0.35rem;
+      font-size: 0.75rem;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      border-left-color: rgba(41, 128, 185, 0.8);
+      padding-left: 1.8rem;
+      background: rgba(52, 152, 219, 0.06);
+
+      &::before {
+        transform: scale(1.1) rotate(-5deg);
+      }
+    }
+  }
+}
+
+.course-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.1rem;
+  flex-wrap: wrap;
+
+  strong {
+    color: #2c3e50;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+}
+
+.term-right {
+  color: #7f8c8d;
+  font-weight: 600;
+  font-size: 0.68rem;
+  margin-left: 0.5rem;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 0.1rem 0.4rem;
+  border-radius: 8px;
+}
+
+.course-details {
+  font-size: 0.72rem;
+  color: #5a6c7d;
+  line-height: 1.3;
+}

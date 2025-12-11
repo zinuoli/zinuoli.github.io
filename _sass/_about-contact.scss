@@ -1,0 +1,123 @@
+// ========== Contact & Social Styles ==========
+
+.social {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px !important;
+    height: 28px !important;
+    background: transparent !important;
+    border-radius: 50% !important;
+    color: #8b95a5 !important;
+    font-size: 0.9rem !important;
+    transition: all 0.25s ease !important;
+    border: 1px solid rgba(139, 149, 165, 0.2) !important;
+    box-shadow: none !important;
+
+    &:hover {
+      transform: translateY(-1px) !important;
+      color: #00A1E9 !important;
+      border-color: rgba(0, 161, 233, 0.35) !important;
+      background: rgba(0, 161, 233, 0.06) !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.contact-note {
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+// ========== Interest Card Styles ==========
+
+.interest-card {
+  margin: 0.8rem 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+
+  strong {
+    background: linear-gradient(135deg, rgba(0, 161, 233, 0.12) 0%, rgba(0, 130, 200, 0.12) 100%);
+    color: #00A1E9;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .copyable {
+    color: #00A1E9;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px dashed rgba(0, 161, 233, 0.5);
+    position: relative;
+
+    &:hover {
+      color: #0082C8;
+      border-bottom-color: #0082C8;
+    }
+
+    i {
+      font-size: 0.85em;
+      margin-left: 0.3rem;
+      opacity: 0.8;
+      transition: all 0.2s ease;
+      color: #00A1E9;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  em {
+    font-style: italic;
+    color: #764ba2;
+  }
+
+  .doraemon-text {
+    color: #00A1E9;
+
+    em {
+      color: #00A1E9;
+      font-style: italic;
+    }
+  }
+}
+
+// ========== Copy Toast ==========
+
+.copy-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: linear-gradient(135deg, #00A1E9 0%, #0082C8 100%);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(0, 161, 233, 0.3);
+  z-index: 9999;
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  &.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}

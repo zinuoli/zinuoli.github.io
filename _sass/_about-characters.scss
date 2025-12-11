@@ -1,0 +1,246 @@
+// ========== Character & Animation Styles ==========
+// Doraemon, Hello Kitty, Tom & Jerry, Pikachu, and dialogue elements
+
+// ========== Character Container Styles ==========
+.character-container {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+// ========== Doraemon Styles ==========
+.doraemon {
+  width: 100px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: doraemonFloat 3s ease-in-out infinite;
+
+  @keyframes doraemonFloat {
+    0%, 100% { transform: translateY(0) rotateZ(-5deg); }
+    50% { transform: translateY(-20px) rotateZ(5deg); }
+  }
+}
+
+// ========== Hello Kitty Styles ==========
+.hello-kitty {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: relative;
+  animation: kittyBounce 1s ease-in-out infinite;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffb6c1 0%, #ffc0cb 100%);
+  }
+
+  @keyframes kittyBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+// ========== Tom & Jerry Styles ==========
+.tom-jerry {
+  width: 90px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: tomJerryMove 2s ease-in-out infinite;
+
+  @keyframes tomJerryMove {
+    0%, 100% { transform: translateX(0) scaleX(1); }
+    50% { transform: translateX(20px) scaleX(-1); }
+  }
+}
+
+// ========== Pikachu Styles ==========
+.pikachu {
+  width: 85px;
+  height: 95px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: pikachuShake 0.5s ease-in-out infinite;
+
+  @keyframes pikachuShake {
+    0%, 100% { transform: translateX(0) rotateZ(0); }
+    25% { transform: translateX(-5px) rotateZ(-2deg); }
+    75% { transform: translateX(5px) rotateZ(2deg); }
+  }
+}
+
+// ========== Speech Bubble Styles ==========
+.dialogue-bubble {
+  position: absolute;
+  background: white;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  max-width: 200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: bubbleAppear 0.3s ease-in;
+  opacity: 0.95;
+
+  @keyframes bubbleAppear {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 0.95;
+      transform: scale(1);
+    }
+  }
+
+  // Tail pointer
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 0 solid transparent;
+    border-top: 10px solid white;
+    left: 15px;
+    bottom: -8px;
+  }
+
+  // Dark mode
+  html[data-theme="dark"] & {
+    background: #161b22;
+    color: #e6edf3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    &::after {
+      border-top-color: #161b22;
+    }
+  }
+}
+
+// ========== Interactive Elements ==========
+.character-tooltip {
+  position: absolute;
+  background: linear-gradient(135deg, #00A1E9 0%, #764ba2 100%);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  z-index: 1001;
+  pointer-events: none;
+  animation: tooltipFade 0.3s ease-in;
+  box-shadow: 0 4px 12px rgba(0, 161, 233, 0.3);
+
+  @keyframes tooltipFade {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+// ========== Draggable Styles ==========
+.draggable-character {
+  cursor: grab;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 161, 233, 0.2);
+  }
+
+  &:active {
+    cursor: grabbing;
+    box-shadow: 0 8px 24px rgba(0, 161, 233, 0.3);
+  }
+}
+
+// ========== Instructions Overlay ==========
+.character-instructions {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  z-index: 999;
+  animation: instructionSlideIn 0.4s ease-out;
+  max-width: 200px;
+
+  @keyframes instructionSlideIn {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Courier New', monospace;
+  }
+}
+
+// ========== Mobile Optimization ==========
+@media (max-width: 768px) {
+  .character-container {
+    // Smaller on mobile
+    .doraemon {
+      width: 70px;
+      height: 90px;
+    }
+
+    .hello-kitty {
+      width: 60px;
+      height: 60px;
+    }
+
+    .tom-jerry {
+      width: 65px;
+      height: 75px;
+    }
+
+    .pikachu {
+      width: 65px;
+      height: 75px;
+    }
+  }
+
+  .dialogue-bubble {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    max-width: 150px;
+  }
+
+  .character-tooltip {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+
+  .character-instructions {
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.75rem;
+    padding: 10px 12px;
+  }
+}

@@ -1,0 +1,40 @@
+<div class="social">
+  <div class="contact-icons">
+    {% if site.email %}
+      <a href="mailto:{{ site.email }}" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+    {% endif %}
+    {% if site.github_username %}
+      <a href="https://github.com/{{ site.github_username }}" title="GitHub" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+    {% endif %}
+    {% if site.scholar_userid %}
+      <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar" target="_blank">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    {% endif %}
+    {% if site.orcid_id %}
+      <a href="https://orcid.org/{{ site.orcid_id }}" title="ORCID" target="_blank">
+        <i class="fab fa-orcid"></i>
+      </a>
+    {% endif %}
+    {% if site.linkedin_username %}
+      <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    {% endif %}
+    {% if site.twitter_username %}
+      <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+    {% endif %}
+  </div>
+
+  {% if page.contact.note %}
+    <p class="contact-note">{{ page.contact.note }}</p>
+  {% endif %}
+</div>
+
+<div class="copy-toast" id="copyToast"></div>

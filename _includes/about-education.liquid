@@ -1,0 +1,26 @@
+<div class="education-section">
+  <h2 class="section-title">
+    <span>👨🏻‍🎓 Education Experience</span>
+  </h2>
+
+  <ul class="education-list">
+    {% for education in site.education %}
+      <li class="education-item">
+        <img src="{{ education.logo }}" alt="{{ education.school }} logo" class="education-logo">
+        <div class="education-details">
+          <div class="education-header">
+            <div>
+              <span class="education-school">{{ education.school }}</span>
+              <span class="education-degree">{{ education.degree }}</span>
+            </div>
+            <span class="education-year">{{ education.year }}</span>
+          </div>
+          <p class="education-college">{{ education.college }}</p>
+          {% if education.intro %}
+            <p class="education-intro">{{ education.intro }}</p>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,62 @@
+<div class="research-section">
+  <h2 class="section-title">
+    <span>🔬 Research Experience</span>
+  </h2>
+
+  <ul class="research-list">
+    {% for research in site.research %}
+      <li class="research-item">
+        <img src="{{ research.logo }}" alt="{{ research.institution }} logo" class="research-logo">
+        <div class="research-details">
+          <div class="research-header">
+            <div>
+              <span class="research-institution">{{ research.institution }}</span>
+              <span class="research-role">{{ research.role }}</span>
+            </div>
+            <span class="research-period">{{ research.period }}</span>
+          </div>
+          
+          {% if research.lab or research.coauthors %}
+            <div class="research-info">
+              {% if research.lab %}
+                <span class="research-lab">
+                  <strong>Lab:</strong>
+                  {% if research.lab_link %}
+                    <a href="{{ research.lab_link }}" target="_blank">{{ research.lab }}</a>
+                  {% else %}
+                    {{ research.lab }}
+                  {% endif %}
+                </span>
+              {% endif %}
+              {% if research.lab and research.coauthors %}
+                <span class="research-info-separator">|</span>
+              {% endif %}
+              {% if research.coauthors %}
+                <span class="research-coauthors">
+                  <strong>Co-Authors:</strong> {{ research.coauthors }}
+                </span>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {% if research.output %}
+            <div class="research-output-section">
+              <strong>Output:</strong>
+              <ul class="research-output-list">
+                {% for output in research.output %}
+                  <li>
+                    {% if output.link %}
+                      <a href="{{ output.link }}" target="_blank">{{ output.name }}</a>
+                    {% else %}
+                      {{ output.name }}
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

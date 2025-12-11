@@ -1,0 +1,15 @@
+<div class="honors-section">
+  <ul class="honors-list">
+    {% for honor in page.honors %}
+      <li>
+        <div class="honor-title">
+          <strong>{{ honor.title }}</strong>
+          <span class="year-right">{{ honor.year }}</span>
+        </div>
+        {% if honor.details %}
+          <p class="honor-details">{{ honor.details }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

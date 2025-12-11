@@ -1,0 +1,518 @@
+// ========== Dark Mode Styles ==========
+// Complete redesign to create elegant dual with light mode
+
+// ========== Global Base ==========
+html[data-theme="dark"] {
+  body {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+    animation: backgroundShiftDark 20s ease-in-out infinite;
+
+    &::before {
+      background: radial-gradient(circle, rgba(94, 200, 242, 0.12) 0%, transparent 70%);
+    }
+
+    &::after {
+      background: radial-gradient(circle, rgba(179, 136, 255, 0.1) 0%, transparent 70%);
+    }
+  }
+
+  .post {
+    color: #c9d1d9;
+  }
+
+  article > .clearfix p,
+  article > .clearfix .interest-card {
+    color: #c9d1d9;
+  }
+
+  // ========== Header Styles ==========
+  .post-title {
+    color: #e6edf3;
+
+    strong {
+      color: #ffffff;
+    }
+  }
+
+  .desc {
+    color: #8b949e;
+
+    a {
+      color: #5ec8f2;
+
+      &:hover {
+        color: #79d4f8;
+      }
+    }
+  }
+
+  // ========== Social Icons ==========
+  .social-icons-header a {
+    color: #8b949e;
+    border-color: rgba(139, 148, 158, 0.3);
+
+    &:hover {
+      color: #5ec8f2;
+      border-color: rgba(94, 200, 242, 0.5);
+      background: rgba(94, 200, 242, 0.1);
+    }
+  }
+
+  // ========== Section Titles ==========
+  .section-title {
+    color: #e6edf3;
+    border-bottom-color: rgba(94, 200, 242, 0.2);
+
+    &::before {
+      background: linear-gradient(135deg, #5ec8f2 0%, #b388ff 100%);
+    }
+
+    &:hover {
+      color: #5ec8f2;
+    }
+  }
+
+  // ========== Education Cards ==========
+  .education-item {
+    background: rgba(22, 27, 34, 0.85);
+    border-color: rgba(48, 54, 61, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      background: linear-gradient(135deg, rgba(94, 200, 242, 0.08) 0%, rgba(179, 136, 255, 0.08) 100%);
+    }
+
+    &:hover {
+      background: rgba(33, 38, 45, 0.95);
+      border-color: rgba(94, 200, 242, 0.4);
+      box-shadow: 0 4px 16px rgba(94, 200, 242, 0.15);
+    }
+  }
+
+  .education-school {
+    color: #e6edf3;
+
+    .education-item:hover & {
+      color: #5ec8f2;
+    }
+  }
+
+  .education-year {
+    background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+  }
+
+  .education-degree {
+    background: rgba(63, 185, 80, 0.15);
+    color: #7ee787;
+    border: 1px solid rgba(63, 185, 80, 0.3);
+  }
+
+  .education-college {
+    color: #8b949e;
+  }
+
+  .education-intro {
+    color: #b1bac4;
+  }
+
+  // ========== Research Cards ==========
+  .research-item {
+    background: rgba(22, 27, 34, 0.85);
+    border-color: rgba(48, 54, 61, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    &::before {
+      background: linear-gradient(135deg, rgba(94, 200, 242, 0.08) 0%, rgba(179, 136, 255, 0.08) 100%);
+    }
+
+    &:hover {
+      background: rgba(33, 38, 45, 0.95);
+      border-color: rgba(94, 200, 242, 0.4);
+      box-shadow: 0 4px 16px rgba(94, 200, 242, 0.15);
+    }
+  }
+
+  .research-institution {
+    color: #e6edf3;
+  }
+
+  .research-period {
+    background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+  }
+
+  .research-role {
+    background: rgba(255, 123, 114, 0.15);
+    color: #ffa198;
+    border: 1px solid rgba(255, 123, 114, 0.3);
+  }
+
+  .research-lab,
+  .research-coauthors {
+    color: #b1bac4;
+
+    strong {
+      color: #e6edf3;
+    }
+
+    a {
+      color: #5ec8f2;
+
+      &:hover {
+        color: #79d4f8;
+      }
+    }
+  }
+
+  .research-info-separator {
+    color: #484f58;
+  }
+
+  .research-output-section {
+    border-top-color: rgba(48, 54, 61, 0.8);
+
+    strong {
+      color: #7ee787;
+    }
+  }
+
+  .research-output-list li {
+    background: rgba(63, 185, 80, 0.12);
+    border-color: rgba(63, 185, 80, 0.25);
+    color: #7ee787;
+
+    a {
+      color: #7ee787;
+    }
+
+    &:hover {
+      background: rgba(63, 185, 80, 0.2);
+      box-shadow: 0 2px 8px rgba(63, 185, 80, 0.2);
+
+      a {
+        color: #a5f3b4;
+      }
+    }
+  }
+
+  // ========== News Section ==========
+  .news {
+    &::-webkit-scrollbar-thumb {
+      background: #30363d;
+
+      &:hover {
+        background: #484f58;
+      }
+    }
+
+    table tr {
+      border-bottom-color: rgba(48, 54, 61, 0.6);
+
+      &:hover {
+        background: rgba(48, 54, 61, 0.3);
+      }
+
+      th {
+        background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+        color: #ffffff !important;
+        font-weight: 600;
+        border: none !important;
+        box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+      }
+
+      td {
+        color: #c9d1d9;
+
+        a {
+          color: #5ec8f2;
+
+          &:hover {
+            color: #79d4f8;
+          }
+        }
+
+        em {
+          color: #8b949e;
+        }
+      }
+    }
+  }
+
+  // ========== Publications ==========
+  .publications {
+    .bibliography li {
+      background: rgba(22, 27, 34, 0.85);
+      border-color: rgba(48, 54, 61, 0.8);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+      &::before {
+        background: linear-gradient(135deg, rgba(94, 200, 242, 0.08) 0%, rgba(179, 136, 255, 0.08) 100%);
+      }
+
+      &:hover {
+        background: rgba(33, 38, 45, 0.95);
+        border-color: rgba(94, 200, 242, 0.4);
+        box-shadow: 0 4px 16px rgba(94, 200, 242, 0.15);
+      }
+    }
+
+    .title {
+      color: #e6edf3;
+    }
+
+    .author {
+      color: #b1bac4;
+
+      em {
+        background: linear-gradient(135deg, #5ec8f2 0%, #b388ff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+
+    .periodical {
+      color: #8b949e;
+    }
+
+    // Links - general
+    .links a {
+      background: rgba(48, 54, 61, 0.6);
+      color: #b1bac4;
+      border-color: rgba(48, 54, 61, 0.8);
+
+      &:hover {
+        background: linear-gradient(135deg, #5ec8f2 0%, #3db8e5 100%);
+        color: #ffffff;
+        border-color: transparent;
+        box-shadow: 0 4px 12px rgba(94, 200, 242, 0.35);
+      }
+
+      // PDF/arXiv
+      &[href*="pdf"],
+      &[href*="arxiv"] {
+        background: rgba(255, 123, 114, 0.12);
+        color: #ffa198;
+        border-color: rgba(255, 123, 114, 0.25);
+
+        &:hover {
+          background: linear-gradient(135deg, #ff7b72 0%, #f85149 100%);
+          color: #ffffff;
+          box-shadow: 0 4px 12px rgba(248, 81, 73, 0.35);
+        }
+      }
+
+      // GitHub
+      &[href*="github"] {
+        background: rgba(110, 118, 129, 0.15);
+        color: #c9d1d9;
+        border-color: rgba(110, 118, 129, 0.3);
+
+        &:hover {
+          background: linear-gradient(135deg, #6e7681 0%, #57606a 100%);
+          color: #ffffff;
+          box-shadow: 0 4px 12px rgba(110, 118, 129, 0.35);
+        }
+      }
+
+      // Website
+      &[href*="xiaofeng-tan.github.io/projects"],
+      &[href*="wengwanjiang.github.io"] {
+        background: rgba(63, 185, 80, 0.12);
+        color: #7ee787;
+        border-color: rgba(63, 185, 80, 0.25);
+
+        &:hover {
+          background: linear-gradient(135deg, #3fb950 0%, #2ea043 100%);
+          color: #ffffff;
+          box-shadow: 0 4px 12px rgba(63, 185, 80, 0.35);
+        }
+      }
+
+      // Abstract/Bib
+      &.abstract,
+      &.bibtex {
+        background: rgba(179, 136, 255, 0.12);
+        color: #d2a8ff;
+        border-color: rgba(179, 136, 255, 0.25);
+
+        &:hover {
+          background: linear-gradient(135deg, #b388ff 0%, #a371f7 100%);
+          color: #ffffff;
+          box-shadow: 0 4px 12px rgba(179, 136, 255, 0.35);
+        }
+      }
+    }
+  }
+
+  // ========== Honors ==========
+  .honors-section::-webkit-scrollbar-thumb {
+    background: #30363d;
+
+    &:hover {
+      background: #484f58;
+    }
+  }
+
+  .honors-list li {
+    background: rgba(210, 168, 0, 0.06);
+    border-left-color: rgba(210, 168, 0, 0.5);
+
+    &:hover {
+      background: rgba(210, 168, 0, 0.12);
+      border-left-color: rgba(210, 168, 0, 0.8);
+    }
+  }
+
+  .honor-title strong {
+    color: #e6edf3;
+  }
+
+  .year-right {
+    background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+  }
+
+  .honor-details {
+    color: #b1bac4;
+  }
+
+  // ========== Teaching ==========
+  .teaching-section::-webkit-scrollbar-thumb {
+    background: #30363d;
+
+    &:hover {
+      background: #484f58;
+    }
+  }
+
+  .teaching-list li {
+    background: rgba(94, 200, 242, 0.06);
+    border-left-color: rgba(94, 200, 242, 0.5);
+
+    &:hover {
+      background: rgba(94, 200, 242, 0.12);
+      border-left-color: rgba(94, 200, 242, 0.8);
+    }
+  }
+
+  .course-title strong {
+    color: #e6edf3;
+  }
+
+  .term-right {
+    background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+  }
+
+  .course-details {
+    color: #b1bac4;
+  }
+
+  // ========== Hobbies ==========
+  .hobby-item {
+    background: rgba(48, 54, 61, 0.5);
+    border-color: rgba(94, 200, 242, 0.2);
+    color: #b1bac4;
+
+    &:hover {
+      background: rgba(94, 200, 242, 0.15);
+      border-color: rgba(94, 200, 242, 0.4);
+      color: #5ec8f2;
+      box-shadow: 0 3px 8px rgba(94, 200, 242, 0.2);
+    }
+  }
+
+  .hobbies-intro em {
+    color: #5ec8f2;
+  }
+
+  // ========== Contact & Social ==========
+  .contact-icons a {
+    color: #8b949e;
+    border-color: rgba(139, 148, 158, 0.3);
+
+    &:hover {
+      color: #5ec8f2;
+      border-color: rgba(94, 200, 242, 0.5);
+      background: rgba(94, 200, 242, 0.1);
+    }
+  }
+
+  .contact-note {
+    color: #8b949e;
+  }
+
+  // ========== Interest Card ==========
+  .interest-card {
+    color: #c9d1d9;
+
+    strong {
+      background: rgba(94, 200, 242, 0.15);
+      color: #5ec8f2;
+    }
+
+    em {
+      color: #d2a8ff;
+    }
+
+    .copyable {
+      color: #5ec8f2;
+      border-bottom-color: rgba(94, 200, 242, 0.4);
+
+      &:hover {
+        color: #79d4f8;
+      }
+
+      i {
+        color: #5ec8f2;
+      }
+    }
+
+    .doraemon-text {
+      color: #5ec8f2;
+
+      em {
+        color: #5ec8f2;
+      }
+    }
+  }
+
+  // ========== Copy Toast ==========
+  .copy-toast {
+    background: linear-gradient(135deg, #5ec8f2 0%, #3db8e5 100%);
+    color: #0d1117;
+  }
+
+  // ========== Footer ==========
+  footer.sticky-bottom,
+  footer.fixed-bottom {
+    background-color: #0d1117 !important;
+    border-top: 1px solid rgba(48, 54, 61, 0.8) !important;
+
+    .container {
+      color: #8b949e !important;
+
+      a {
+        color: #5ec8f2 !important;
+
+        &:hover {
+          color: #79d4f8 !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="teaching-section">
+  <ul class="teaching-list">
+    {% for course in page.teaching %}
+      <li>
+        <div class="course-title">
+          <strong>{{ course.title }}</strong>
+          <span class="term-right">{{ course.term }}</span>
+        </div>
+        {% if course.details %}
+          <p class="course-details">{{ course.details }}</p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

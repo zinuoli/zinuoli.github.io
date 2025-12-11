@@ -1,0 +1,461 @@
+// ========== Responsive Design ==========
+
+// ========== Tablet View (max-width: 992px) ==========
+@media (max-width: 992px) {
+  .research-lab {
+    min-width: 180px;
+    width: 180px;
+  }
+}
+
+// ========== Mobile View (max-width: 768px) ==========
+@media (max-width: 768px) {
+  // Page header
+  .post-header {
+    padding: 0;
+    margin-bottom: 0.8rem;
+  }
+
+  .post-title {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .desc {
+    font-size: 0.9rem;
+  }
+
+  // Social icons - larger touch area
+  .social-icons-header {
+    gap: 0.8rem;
+    margin-top: 0.6rem;
+
+    a {
+      width: 32px;
+      height: 32px;
+      font-size: 0.9rem;
+    }
+  }
+
+  // Section titles
+  .section-title {
+    font-size: 1.05rem;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    padding-left: 0.8rem;
+
+    &::before {
+      height: 0.9rem;
+    }
+  }
+
+  // Education cards - vertical layout
+  .education-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .education-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .education-details {
+    width: 100%;
+  }
+
+  .education-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.3rem;
+    }
+  }
+
+  .education-school {
+    font-size: 0.92rem;
+  }
+
+  .education-degree {
+    font-size: 0.68rem;
+    padding: 0.1rem 0.35rem;
+    margin-left: 0;
+  }
+
+  .education-year {
+    font-size: 0.68rem;
+    padding: 0.12rem 0.4rem;
+    margin-left: 0;
+  }
+
+  .education-college {
+    font-size: 0.72rem;
+    margin: 0.2rem 0;
+  }
+
+  .education-intro {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  // Research cards - vertical layout
+  .research-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .research-logo {
+    width: 55px;
+    height: 55px;
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+  }
+
+  .research-details {
+    width: 100%;
+  }
+
+  .research-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    margin-bottom: 0.3rem;
+
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.3rem;
+    }
+  }
+
+  .research-institution {
+    font-size: 0.92rem;
+  }
+
+  .research-role {
+    font-size: 0.68rem;
+    padding: 0.1rem 0.35rem;
+    margin-left: 0;
+  }
+
+  .research-period {
+    font-size: 0.68rem;
+    padding: 0.12rem 0.4rem;
+    margin-left: 0;
+  }
+
+  // Lab and co-authors - vertical stacking
+  .research-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    font-size: 0.75rem;
+  }
+
+  .research-lab {
+    min-width: unset;
+    width: 100%;
+    white-space: normal;
+  }
+
+  .research-info-separator {
+    display: none;
+  }
+
+  .research-coauthors {
+    width: 100%;
+  }
+
+  .research-output-section {
+    margin-top: 0.3rem;
+    padding-top: 0.3rem;
+
+    strong {
+      font-size: 0.75rem;
+    }
+  }
+
+  .research-output-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.2rem;
+
+    li {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.4rem;
+      margin-right: 0;
+      margin-top: 0;
+    }
+  }
+
+  // News section
+  .news {
+    max-height: 180px;
+
+    table tr {
+      padding: 0.3rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      th {
+        font-size: 0.65rem;
+        min-width: auto;
+        max-width: none;
+        padding: 0.1rem 0.4rem;
+        margin-right: 0;
+        margin-bottom: 0.2rem;
+      }
+
+      td {
+        font-size: 0.78rem;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  // Publications - complete reflow
+  .publications {
+    .bibliography li {
+      padding: 0.5rem 0.6rem;
+      margin-bottom: 0.4rem;
+
+      .row {
+        flex-direction: column;
+      }
+    }
+
+    .title {
+      font-size: 0.88rem;
+      line-height: 1.4;
+      margin-bottom: 0.2rem;
+    }
+
+    .author {
+      font-size: 0.76rem;
+      line-height: 1.35;
+      margin-bottom: 0.15rem;
+    }
+
+    .periodical {
+      font-size: 0.74rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem;
+      margin-top: 0.25rem;
+
+      a {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.45rem;
+        min-height: 30px;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+  }
+
+  // Honors - keep scrollbar
+  .honors-section {
+    max-height: 140px;
+    overflow-y: auto;
+
+    li {
+      padding: 0.4rem 0.4rem 0.4rem 1.5rem;
+      margin-bottom: 0.3rem;
+
+      &::before {
+        font-size: 0.75rem;
+        left: 0.3rem;
+        top: 0.4rem;
+      }
+    }
+  }
+
+  .honor-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+
+    strong {
+      font-size: 0.85rem;
+    }
+  }
+
+  .year-right {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.35rem;
+    margin-left: 0;
+  }
+
+  .honor-details {
+    font-size: 0.72rem;
+    margin-top: 0.1rem;
+  }
+
+  // Teaching - keep scrollbar
+  .teaching-section {
+    max-height: 140px;
+    overflow-y: auto;
+
+    li {
+      padding: 0.4rem 0.4rem 0.4rem 1.5rem;
+      margin-bottom: 0.3rem;
+
+      &::before {
+        font-size: 0.75rem;
+        left: 0.3rem;
+        top: 0.4rem;
+      }
+    }
+  }
+
+  .course-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+
+    strong {
+      font-size: 0.85rem;
+    }
+  }
+
+  .term-right {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.35rem;
+    margin-left: 0;
+  }
+
+  .course-details {
+    font-size: 0.72rem;
+    margin-top: 0.1rem;
+  }
+
+  // Bottom social icons
+  .contact-icons a {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 1.1rem !important;
+  }
+
+  // Disable hover animations on touch devices
+  .education-item:hover,
+  .research-item:hover,
+  .publications .bibliography li:hover {
+    transform: none;
+  }
+
+  .education-item:hover .education-logo,
+  .research-item:hover .research-logo {
+    transform: none;
+  }
+
+  .honors-list li:hover,
+  .teaching-list li:hover {
+    padding-left: 1.5rem;
+  }
+
+  // Copy toast optimization
+  .copy-toast {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+// ========== Extra Small Screens (< 480px) ==========
+@media (max-width: 480px) {
+  .post-title {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 0.95rem;
+  }
+
+  // Education cards
+  .education-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .education-school {
+    font-size: 0.85rem;
+  }
+
+  .education-degree {
+    font-size: 0.62rem;
+  }
+
+  .education-year {
+    font-size: 0.62rem;
+  }
+
+  // Research cards
+  .research-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .research-institution {
+    font-size: 0.85rem;
+  }
+
+  .research-role {
+    font-size: 0.62rem;
+  }
+
+  .research-period {
+    font-size: 0.62rem;
+  }
+
+  // Publications
+  .publications {
+    .title {
+      font-size: 0.82rem;
+    }
+
+    .author {
+      font-size: 0.72rem;
+    }
+
+    .periodical {
+      font-size: 0.7rem;
+    }
+
+    .links a {
+      font-size: 0.65rem;
+      padding: 0.12rem 0.35rem;
+      min-height: 28px;
+    }
+  }
+
+  // Honors and teaching
+  .honor-title strong,
+  .course-title strong {
+    font-size: 0.8rem;
+  }
+
+  .honor-details,
+  .course-details {
+    font-size: 0.68rem;
+  }
+}
