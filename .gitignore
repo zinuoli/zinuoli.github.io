@@ -11,3 +11,10 @@ assets/libs/
 node_modules/
 vendor
 .idea
+
+# Temporary and backup files
+*_tmp.*
+*_old.*
+*.bak
+*.backup
+*~
