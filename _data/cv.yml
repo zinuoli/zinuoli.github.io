@@ -1,0 +1,92 @@
+- title: General Information
+  type: map
+  contents:
+    - name: Full Name
+      value: Zinuo Li (李梓诺)
+    - name: Email
+      value: zinuo.li@research.uwa.edu.au
+    - name: Location
+      value: Perth, Australia
+    - name: Languages
+      value: English, Chinese (Mandarin)
+
+- title: Education
+  type: time_table
+  contents:
+    - title: PhD in Computer Science
+      institution: University of Western Australia, Perth, Australia
+      year: 2024 - Present
+      description:
+        - Supervised by Prof. Mohammed Bennamoun and Prof. Farid Boussaid
+        - Co-supervised by Dr. Qiuhong Ke (Monash University)
+        - Research focus on Video Understanding and Multimodal Large Language Models
+
+- title: Experience
+  type: time_table
+  contents:
+    - title: Research Intern
+      institution: Tencent Youtu Lab
+      year: 2025 - Present
+      description:
+        - Working on cutting-edge multimodal AI research
+        - Focus on video understanding and multimodal large language models
+      logo: tencent-youtu-logo.png
+        
+    - title: PhD Student
+      institution: University of Western Australia
+      year: 2024 - Present
+      description:
+        - Research in Computer Science focusing on Video Understanding and Multimodal Large Language Models
+        - Supervised by Prof. Mohammed Bennamoun and Prof. Farid Boussaid
+
+- title: Honors and Awards
+  type: time_table
+  contents:
+    - year: 2024
+      items:
+        - UWA Full Scholarship
+
+- title: Publications
+  type: time_table
+  contents:
+    - title: TriSense (NeurIPS 2025)
+      year: 2025
+      description: Watch and Listen - Understanding Audio-Visual-Speech Moments with Multimodal LLM
+      
+    - title: SD7K (ICCV 2023)
+      year: 2023
+      description: High-resolution Document Shadow Removal via A Large-scale Real-world Dataset
+      
+    - title: FilmNet (IJCAI 2023)
+      year: 2023
+      description: A Large-scale Film Style Dataset for Learning Multi-frequency Driven Film Enhancement
+      
+    - title: DeVigNet (AAAI 2024)
+      year: 2024
+      description: High-Resolution Vignetting Removal via a Dual Aggregated Fusion Transformer
+
+- title: Research Interests
+  type: nested_list
+  contents:
+    - title: Video Understanding
+      items:
+        - Multimodal video analysis and comprehension
+        - Temporal reasoning in video sequences
+    - title: Multimodal Large Language Models
+      items:
+        - Audio-visual-speech integration
+        - Cross-modal understanding and generation
+    - title: Visual Reasoning
+      items:
+        - Scene understanding and interpretation
+        - Visual question answering
+    - title: ACG-related Topics
+      items:
+        - Animation and gaming applications
+        - Creative content generation
+
+- title: Other Interests
+  type: list
+  contents:
+    - <u>Research Areas:</u> Agentic RL, Computer Vision, Machine Learning
+    - <u>Technical Skills:</u> Python, PyTorch, TensorFlow, OpenCV

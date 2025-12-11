@@ -1,0 +1,2592 @@
+---
+layout: default
+---
+
+<!-- 引入学术风格衬线字体 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
+
+<style>
+  /* ========== 全局样式与动画 ========== */
+  body {
+    background: linear-gradient(135deg, #fdfbfb 0%, #f7f4f9 50%, #faf8fc 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    animation: backgroundShiftLight 20s ease-in-out infinite;
+    font-family: "Crimson Pro", "Source Serif 4", Georgia, "Times New Roman", serif;
+  }
+
+  @keyframes backgroundShiftLight {
+    0%, 100% { 
+      background: linear-gradient(135deg, #fdfbfb 0%, #f7f4f9 50%, #faf8fc 100%);
+    }
+    50% { 
+      background: linear-gradient(135deg, #faf8fc 0%, #fdfbfb 50%, #f7f4f9 100%);
+    }
+  }
+
+  @keyframes backgroundShiftDark {
+    0%, 100% { 
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+    }
+    50% { 
+      background: linear-gradient(135deg, #16213e 0%, #1a1a2e 50%, #16213e 100%);
+    }
+  }
+
+  /* 全局浮动装饰元素 */
+  body::before,
+  body::after {
+    content: '';
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  body::before {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 161, 233, 0.1) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    animation: floatBubble1 25s ease-in-out infinite;
+  }
+
+  body::after {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(118, 75, 162, 0.08) 0%, transparent 70%);
+    bottom: -80px;
+    left: -80px;
+    animation: floatBubble2 30s ease-in-out infinite;
+  }
+
+  @keyframes floatBubble1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-50px, 50px) scale(1.1); }
+  }
+
+  @keyframes floatBubble2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(50px, -50px) scale(1.15); }
+  }
+
+  .post {
+    font-family: "Crimson Pro", "Source Serif 4", Georgia, "Times New Roman", serif;
+    color: #2c3e50;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* About 正文段落样式 - 与 Publications 标题一致 */
+  article > .clearfix p,
+  article > .clearfix .interest-card {
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #2c3e50;
+  }
+
+  article > .clearfix a {
+    color: #00A1E9;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  article > .clearfix a:hover {
+    color: #764ba2;
+  }
+
+  /* ========== 页面标题区域（左对齐、与正文对齐，无背景）========== */
+  .post-header {
+    text-align: left;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    position: relative;
+    overflow: visible;
+    backdrop-filter: none;
+    border-radius: 0;
+  }
+
+  .post-header::before {
+    content: none;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(-30px, -30px) rotate(180deg); }
+  }
+
+  .post-title {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+    color: #6b7c8c;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+  }
+
+  .post-title strong {
+    color: #5c6773;
+  }
+
+  .desc {
+    font-size: 1.05rem;
+    color: #7f8c8d;
+    margin-top: 0.3rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .desc a {
+    color: #00A1E9;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .desc a:hover {
+    color: #764ba2;
+  }
+
+  /* ========== 社交图标样式 ========== */
+  .social-icons-header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.6rem;
+    margin-top: 0.8rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .social-icons-header a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: transparent;
+    border-radius: 50%;
+    color: #8b95a5;
+    font-size: 0.85rem;
+    transition: all 0.25s ease;
+    border: 1px solid rgba(139, 149, 165, 0.15);
+  }
+
+  .social-icons-header a:hover {
+    transform: translateY(-1px);
+    color: #00A1E9;
+    border-color: rgba(0, 161, 233, 0.3);
+    background: rgba(0, 161, 233, 0.05);
+  }
+
+  /* ========== 通用章节标题样式（紧凑）========== */
+  .section-title {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+    padding-left: 1rem;
+    border-bottom: 2px solid rgba(0, 161, 233, 0.1);
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+  }
+
+  .section-title:hover {
+    color: #00A1E9;
+  }
+
+  .section-title::before {
+    content: '';
+    width: 3px;
+    height: 1.1rem;
+    background: linear-gradient(135deg, #00A1E9 0%, #764ba2 100%);
+    margin-right: 0.6rem;
+    border-radius: 2px;
+    position: absolute;
+    box-shadow: 0 2px 6px rgba(0, 161, 233, 0.2);
+    left: 0;
+  }
+
+  /* ========== 教育经历样式 ========== */
+  .education-section {
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .education-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .education-item {
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 161, 233, 0.05);
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 161, 233, 0.08);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .education-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 161, 233, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .education-item:hover::before {
+    opacity: 1;
+  }
+
+  .education-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 161, 233, 0.1);
+    border-color: rgba(0, 161, 233, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .education-logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+  }
+
+  .education-item:hover .education-logo {
+    transform: scale(1.03);
+  }
+
+  .education-details {
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+  }
+
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.2rem;
+    flex-wrap: wrap;
+  }
+
+  .education-school {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+  }
+
+  .education-item:hover .education-school {
+    color: #00A1E9;
+  }
+
+  .education-degree {
+    font-size: 0.72rem;
+    color: #2e7d32;
+    font-weight: 500;
+    margin-left: 0.3rem;
+    background: #e8f5e9;
+    padding: 0.1rem 0.4rem;
+    border-radius: 8px;
+  }
+
+  .education-year {
+    font-size: 0.72rem;
+    color: #00A1E9;
+    font-weight: 600;
+    background: rgba(0, 161, 233, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    margin-left: 0.6rem;
+    box-shadow: 0 1px 3px rgba(0, 161, 233, 0.08);
+  }
+
+  .education-college {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    margin: 0.2rem 0;
+    line-height: 1.3;
+  }
+
+  .education-intro {
+    font-size: 0.8rem;
+    color: #5a6c7d;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* ========== 研究经历样式 ========== */
+  .research-section {
+    margin-top: 0.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .research-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .research-item {
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 161, 233, 0.05);
+    padding: 0.6rem 0.9rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: flex-start;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 161, 233, 0.08);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .research-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 161, 233, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .research-item:hover::before {
+    opacity: 1;
+  }
+
+  .research-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 161, 233, 0.1);
+    border-color: rgba(0, 161, 233, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .research-logo {
+    width: 70px;
+    height: 70px;
+    margin-right: 0.8rem;
+    flex-shrink: 0;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease;
+  }
+
+  .research-item:hover .research-logo {
+    transform: scale(1.03);
+  }
+
+  .research-details {
+    flex-grow: 1;
+  }
+
+  .research-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.3rem;
+    flex-wrap: wrap;
+  }
+
+  .research-institution {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #2c3e50;
+  }
+
+  .research-role {
+    font-size: 0.72rem;
+    color: #e74c3c;
+    font-weight: 500;
+    margin-left: 0.3rem;
+    background: #ffebee;
+    padding: 0.1rem 0.4rem;
+    border-radius: 8px;
+  }
+
+  .research-period {
+    font-size: 0.72rem;
+    color: #00A1E9;
+    font-weight: 500;
+    background: #f0f3ff;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    margin-left: 0.6rem;
+  }
+
+  .research-info {
+    font-size: 0.78rem;
+    color: #5a6c7d;
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: baseline;
+  }
+
+  .research-lab {
+    color: #5a6c7d;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-width: 230px;
+    width: 230px;
+  }
+
+  .research-info-separator {
+    color: #ccc;
+    margin: 0 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .research-coauthors {
+    color: #5a6c7d;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .research-lab a {
+    color: #00A1E9;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .research-lab a:hover {
+    color: #0082C8;
+    text-decoration: underline;
+  }
+
+  .research-lab strong,
+  .research-coauthors strong {
+    color: #2c3e50;
+    font-weight: 600;
+  }
+
+  .research-output-section {
+    margin-top: 0.15rem;
+    padding-top: 0.15rem;
+    border-top: 1px dashed #e8ecef;
+  }
+
+  .research-output-section strong {
+    color: #27ae60;
+    font-weight: 600;
+    font-size: 0.78rem;
+  }
+
+  /* 修复：研究工作横向排列 */
+  .research-output-list {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .research-output-list li {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    background: #e8f5e9;
+    border-radius: 10px;
+    font-size: 0.72rem;
+    color: #2e7d32;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: 1px solid #c8e6c9;
+    margin-right: 0.2rem;
+    margin-top: 0.15rem;
+  }
+
+  .research-output-list li a {
+    color: #2e7d32;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+
+  .research-output-list li a::after {
+    content: ' \f35d';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 0.65em;
+    opacity: 0.6;
+    margin-left: 0.15rem;
+  }
+
+  .research-output-list li:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(46, 125, 50, 0.12);
+    background: #c8e6c9;
+  }
+
+  .research-output-list li:hover a {
+    color: #1b5e20;
+  }
+
+  /* ========== 新闻动态样式（紧凑、浅色）========== */
+  .news {
+    max-height: 240px;
+    overflow-y: auto;
+    padding-right: 6px;
+    margin-bottom: 0.6rem;
+  }
+
+  .news::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .news::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .news::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
+  }
+
+  .news::-webkit-scrollbar-thumb:hover {
+    background: #bdbdbd;
+  }
+
+  /* 新闻列表样式 - 紧凑、清爽 */
+  .news table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  .news table tr {
+    background: transparent;
+    transition: all 0.2s ease;
+    display: block;
+    margin-bottom: 0.15rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .news table tr:last-child {
+    border-bottom: none;
+  }
+
+  .news table tr:hover {
+    background: #fafbfc;
+    padding-left: 0.4rem;
+  }
+
+  .news table tr th {
+    display: inline-block;
+    width: auto;
+    min-width: 80px;
+    max-width: 80px;
+    padding: 0.1rem 0.4rem;
+    background: #e3f2fd;
+    color: #1976d2;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .news table tr td {
+    display: inline;
+    font-size: 0.82rem;
+    color: #2c3e50;
+    line-height: 1.4;
+    vertical-align: middle;
+  }
+
+  .news table tr td p {
+    display: inline;
+    margin: 0;
+  }
+
+  .news table tr td a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .news table tr td a:hover {
+    color: #0d47a1;
+  }
+
+  .news table tr td em {
+    color: #5a6c7d;
+    font-style: normal;
+    font-size: 0.72rem;
+    margin-left: 0.4rem;
+  }
+
+  /* ========== Publications 样式（美化版）========== */
+  .publications {
+    margin-bottom: 0.6rem;
+  }
+
+  .publications .bibliography {
+    margin-top: 0;
+  }
+
+  .publications .bibliography li {
+    margin-bottom: 0.25rem;
+    padding: 0.35rem 0.8rem;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 161, 233, 0.05);
+    border: 1px solid rgba(0, 161, 233, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: visible;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    min-width: 0;
+  }
+
+  .publications .bibliography li .row {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .publications .bibliography li .col-sm-8,
+  .publications .bibliography li .col-sm-10 {
+    flex: 1;
+    max-width: none;
+    width: auto;
+  }
+
+  .publications .bibliography li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 161, 233, 0.06) 0%, rgba(118, 75, 162, 0.06) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .publications .bibliography li:hover::before {
+    opacity: 1;
+  }
+
+  .publications .bibliography li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 161, 233, 0.1);
+    border-color: rgba(0, 161, 233, 0.2);
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .publications .bibliography li:last-child {
+    margin-bottom: 0;
+  }
+
+  .publications .title {
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+    color: #2c3e50;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    letter-spacing: -0.01em;
+    width: 100%;
+  }
+
+  .publications .author {
+    font-size: 0.8rem;
+    margin-bottom: 0.1rem;
+    color: #5a6c7d;
+    position: relative;
+    z-index: 1;
+    line-height: 1.35;
+  }
+
+  .publications .author em {
+    font-weight: 700;
+    font-style: normal;
+    color: #00A1E9;
+    background: linear-gradient(135deg, #00A1E9 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .publications .author em sup,
+  .publications .author sup {
+    -webkit-text-fill-color: #00A1E9;
+    color: #00A1E9;
+    font-size: 0.7em;
+    vertical-align: super;
+  }
+
+  .publications .periodical {
+    font-size: 0.78rem;
+    margin-bottom: 0.1rem;
+    color: #7f8c8d;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    line-height: 1.25;
+  }
+
+  .publications .periodical .venue-abbr {
+    font-style: normal;
+    font-weight: 600;
+    margin-right: 0.3rem;
+    font-size: 0.75rem;
+  }
+
+  .publications .periodical .venue-separator {
+    color: #ccc;
+    margin: 0 0.4rem;
+    font-style: normal;
+  }
+
+  /* CCF 等级徽章 */
+  .ccf-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.4rem;
+    font-style: normal;
+    vertical-align: middle;
+  }
+
+  .ccf-badge-ccfa {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(238, 90, 90, 0.3);
+  }
+
+  .ccf-badge-ccfb {
+    background: linear-gradient(135deg, #ffa726 0%, #fb8c00 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(251, 140, 0, 0.3);
+  }
+
+  .ccf-badge-ccfc {
+    background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(67, 160, 71, 0.3);
+  }
+
+  .ccf-badge-ccfnone {
+    background: linear-gradient(135deg, #90a4ae 0%, #78909c 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(120, 144, 156, 0.3);
+  }
+
+  /* CORE 等级徽章 */
+  .core-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.4rem;
+    font-style: normal;
+    vertical-align: middle;
+  }
+
+  .core-badge-coreastar {
+    background: linear-gradient(135deg, #7c4dff 0%, #651fff 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(101, 31, 255, 0.3);
+  }
+
+  .core-badge-corea {
+    background: linear-gradient(135deg, #448aff 0%, #2979ff 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(41, 121, 255, 0.3);
+  }
+
+  .core-badge-coreb {
+    background: linear-gradient(135deg, #69f0ae 0%, #00e676 100%);
+    color: #1b5e20;
+    box-shadow: 0 2px 4px rgba(0, 230, 118, 0.3);
+  }
+
+  /* SCI 分区徽章 */
+  .sci-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    margin-left: 0.4rem;
+    font-style: normal;
+    vertical-align: middle;
+  }
+
+  .sci-badge-sciq1 {
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(194, 24, 91, 0.3);
+  }
+
+  .sci-badge-sciq2 {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(245, 124, 0, 0.3);
+  }
+
+  .sci-badge-sciq3 {
+    background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(104, 159, 56, 0.3);
+  }
+
+  .sci-badge-sciq4 {
+    background: linear-gradient(135deg, #9e9e9e 0%, #757575 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(117, 117, 117, 0.3);
+  }
+
+  .publications .links {
+    font-size: 0.72rem;
+    margin-top: 0.15rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem;
+  }
+
+  .publications .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+    padding: 0.1rem 0.4rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f4 100%);
+    color: #5a6c7d;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    border: 1px solid #e0e3e7;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  }
+
+  .publications .links a i {
+    font-size: 0.7em;
+    opacity: 0.7;
+  }
+
+  .publications .links a:hover {
+    background: linear-gradient(135deg, #00A1E9 0%, #0082C8 100%);
+    color: white;
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 161, 233, 0.35);
+  }
+
+  .publications .links a:hover i {
+    opacity: 1;
+  }
+
+  /* PDF 按钮 */
+  .publications .links a[href*="pdf"],
+  .publications .links a[href*="arxiv"] {
+    background: linear-gradient(135deg, #fef9f9 0%, #fdf5f5 100%);
+    color: #d9534f;
+    border-color: #f8d7da;
+  }
+
+  .publications .links a[href*="pdf"]:hover,
+  .publications .links a[href*="arxiv"]:hover {
+    background: linear-gradient(135deg, #f5a5a2 0%, #e88985 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(217, 83, 79, 0.25);
+  }
+
+  /* Code/GitHub 按钮 */
+  .publications .links a[href*="github"] {
+    background: linear-gradient(135deg, #fafbfc 0%, #f3f4f6 100%);
+    color: #586069;
+    border-color: #e1e4e8;
+  }
+
+  .publications .links a[href*="github"]:hover {
+    background: linear-gradient(135deg, #6a737d 0%, #586069 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(88, 96, 105, 0.25);
+  }
+
+  /* Website 按钮 */
+  .publications .links a[href*="xiaofeng-tan.github.io/projects"],
+  .publications .links a[href*="wengwanjiang.github.io"] {
+    background: linear-gradient(135deg, #f4faf5 0%, #e8f5e9 100%);
+    color: #5cb85c;
+    border-color: #c3e6cb;
+  }
+
+  .publications .links a[href*="xiaofeng-tan.github.io/projects"]:hover,
+  .publications .links a[href*="wengwanjiang.github.io"]:hover {
+    background: linear-gradient(135deg, #81c784 0%, #66bb6a 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(92, 184, 92, 0.25);
+  }
+
+  /* Award 按钮 */
+  .publications .links a.award {
+    background: linear-gradient(135deg, #fffcf5 0%, #fff8e7 100%);
+    color: #f0ad4e;
+    border-color: #ffeeba;
+  }
+
+  .publications .links a.award:hover {
+    background: linear-gradient(135deg, #ffcc80 0%, #ffb74d 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(240, 173, 78, 0.25);
+  }
+
+  /* Abstract/Bib 按钮 */
+  .publications .links a.abstract,
+  .publications .links a.bibtex {
+    background: linear-gradient(135deg, #faf5fc 0%, #f3e8f7 100%);
+    color: #9b59b6;
+    border-color: #e2d4ea;
+  }
+
+  .publications .links a.abstract:hover,
+  .publications .links a.bibtex:hover {
+    background: linear-gradient(135deg, #b388c9 0%, #a370b8 100%);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(155, 89, 182, 0.25);
+  }
+
+  /* ========== 荣誉奖项样式（带滚动条）========== */
+  .honors-section {
+    margin-bottom: 0.6rem;
+    max-height: 160px;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+
+  .honors-section::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .honors-section::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .honors-section::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
+  }
+
+  .honors-section::-webkit-scrollbar-thumb:hover {
+    background: #bdbdbd;
+  }
+
+  .honors-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .honors-list li {
+    padding: 0.35rem 0 0.35rem 1.6rem;
+    margin-bottom: 0.25rem;
+    border-left: 2px solid rgba(255, 215, 0, 0.6);
+    transition: all 0.3s ease;
+    position: relative;
+    background: rgba(255, 215, 0, 0.03);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .honors-list li::before {
+    content: '🏆';
+    position: absolute;
+    left: 0.3rem;
+    top: 0.35rem;
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+
+  .honors-list li:hover {
+    border-left-color: rgba(255, 183, 0, 0.8);
+    padding-left: 1.8rem;
+    background: rgba(255, 215, 0, 0.06);
+  }
+
+  .honors-list li:hover::before {
+    transform: scale(1.1) rotate(10deg);
+  }
+
+  .honor-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.1rem;
+    flex-wrap: wrap;
+  }
+
+  .honor-title strong {
+    color: #2c3e50;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .year-right {
+    color: #7f8c8d;
+    font-weight: 600;
+    font-size: 0.68rem;
+    margin-left: 0.5rem;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 0.1rem 0.4rem;
+    border-radius: 8px;
+  }
+
+  .honor-details {
+    font-size: 0.72rem;
+    color: #5a6c7d;
+    line-height: 1.3;
+  }
+
+  /* ========== 助教经历样式（带滚动条）========== */
+  .teaching-section {
+    margin-bottom: 0.6rem;
+    max-height: 160px;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+
+  .teaching-section::-webkit-scrollbar {
+    width: 3px;
+  }
+
+  .teaching-section::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .teaching-section::-webkit-scrollbar-thumb {
+    background: #e0e0e0;
+    border-radius: 10px;
+  }
+
+  .teaching-section::-webkit-scrollbar-thumb:hover {
+    background: #bdbdbd;
+  }
+
+  .teaching-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .teaching-list li {
+    padding: 0.35rem 0 0.35rem 1.6rem;
+    margin-bottom: 0.25rem;
+    border-left: 2px solid rgba(52, 152, 219, 0.6);
+    transition: all 0.3s ease;
+    position: relative;
+    background: rgba(52, 152, 219, 0.03);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .teaching-list li::before {
+    content: '📚';
+    position: absolute;
+    left: 0.3rem;
+    top: 0.35rem;
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+  }
+
+  .teaching-list li:hover {
+    border-left-color: rgba(41, 128, 185, 0.8);
+    padding-left: 1.8rem;
+    background: rgba(52, 152, 219, 0.06);
+  }
+
+  .teaching-list li:hover::before {
+    transform: scale(1.1) rotate(-5deg);
+  }
+
+  .course-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.1rem;
+    flex-wrap: wrap;
+  }
+
+  .course-title strong {
+    color: #2c3e50;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .term-right {
+    color: #7f8c8d;
+    font-weight: 600;
+    font-size: 0.68rem;
+    margin-left: 0.5rem;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 0.1rem 0.4rem;
+    border-radius: 8px;
+  }
+
+  .course-details {
+    font-size: 0.72rem;
+    color: #5a6c7d;
+    line-height: 1.3;
+  }
+
+  /* ========== 爱好样式 ========== */
+  .hobbies-section {
+    margin-bottom: 0.6rem;
+  }
+
+  .hobbies-intro {
+    font-size: 0.88rem;
+    color: #5a6c7d;
+    line-height: 1.6;
+    margin-bottom: 0.6rem;
+    text-align: justify;
+  }
+
+  .hobbies-intro em {
+    font-style: italic;
+    color: #00A1E9;
+  }
+
+  .hobbies-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .hobby-item {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.6rem;
+    background: rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    color: #5a6c7d;
+    font-weight: 500;
+    border: 1px solid rgba(0, 161, 233, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  }
+
+  .hobby-item:hover {
+    background: rgba(0, 161, 233, 0.08);
+    border-color: rgba(0, 161, 233, 0.25);
+    color: #00A1E9;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 161, 233, 0.12);
+  }
+
+  /* ========== 底部社交图标样式（小巧优雅）========== */
+  .social {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .contact-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px !important;
+    height: 28px !important;
+    background: transparent !important;
+    border-radius: 50% !important;
+    color: #8b95a5 !important;
+    font-size: 0.9rem !important;
+    transition: all 0.25s ease !important;
+    border: 1px solid rgba(139, 149, 165, 0.2) !important;
+    box-shadow: none !important;
+  }
+
+  .contact-icons a:hover {
+    transform: translateY(-1px) !important;
+    color: #00A1E9 !important;
+    border-color: rgba(0, 161, 233, 0.35) !important;
+    background: rgba(0, 161, 233, 0.06) !important;
+    box-shadow: none !important;
+  }
+
+  .contact-note {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+  }
+
+  /* ========== 研究兴趣与联系卡片 ========== */
+  .interest-card {
+    margin: 0.8rem 0;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  .interest-card strong {
+    background: linear-gradient(135deg, rgba(0, 161, 233, 0.12) 0%, rgba(0, 130, 200, 0.12) 100%);
+    color: #00A1E9;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .interest-card .copyable {
+    color: #00A1E9;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px dashed rgba(0, 161, 233, 0.5);
+    position: relative;
+  }
+
+  .interest-card .copyable:hover {
+    color: #0082C8;
+    border-bottom-color: #0082C8;
+  }
+
+  .interest-card .copyable i {
+    font-size: 0.85em;
+    margin-left: 0.3rem;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+    color: #00A1E9;
+  }
+
+  .interest-card .copyable:hover i {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  .interest-card em {
+    font-style: italic;
+    color: #764ba2;
+  }
+
+  .interest-card .doraemon-text {
+    color: #00A1E9;
+  }
+
+  .interest-card .doraemon-text em {
+    color: #00A1E9;
+    font-style: italic;
+  }
+
+  /* 复制成功提示 */
+  .copy-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    background: linear-gradient(135deg, #00A1E9 0%, #0082C8 100%);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 161, 233, 0.3);
+    z-index: 9999;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .copy-toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+  /* ========== 响应式设计 - 平板端 ========== */
+  @media (max-width: 992px) {
+    .research-lab {
+      min-width: 180px;
+      width: 180px;
+    }
+  }
+
+  /* ========== 响应式设计 - 移动端 ========== */
+  @media (max-width: 768px) {
+    /* 页面标题 */
+    .post-header {
+      padding: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .post-title {
+      font-size: 1.5rem;
+      line-height: 1.3;
+    }
+
+    .desc {
+      font-size: 0.9rem;
+    }
+
+    /* 社交图标 - 更大的触摸区域 */
+    .social-icons-header {
+      gap: 0.8rem;
+      margin-top: 0.6rem;
+    }
+
+    .social-icons-header a {
+      width: 32px;
+      height: 32px;
+      font-size: 0.9rem;
+    }
+
+    /* 章节标题 */
+    .section-title {
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      margin-bottom: 0.4rem;
+      padding-left: 0.8rem;
+    }
+
+    .section-title::before {
+      height: 0.9rem;
+    }
+
+    /* ====== 教育经历卡片 - 垂直布局 ====== */
+    .education-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .education-logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+      border-radius: 10px;
+    }
+
+    .education-details {
+      width: 100%;
+    }
+
+    .education-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+    }
+
+    .education-header > div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .education-school {
+      font-size: 0.92rem;
+    }
+
+    .education-degree {
+      font-size: 0.68rem;
+      padding: 0.1rem 0.35rem;
+      margin-left: 0;
+    }
+
+    .education-year {
+      font-size: 0.68rem;
+      padding: 0.12rem 0.4rem;
+      margin-left: 0;
+    }
+
+    .education-college {
+      font-size: 0.72rem;
+      margin: 0.2rem 0;
+    }
+
+    .education-intro {
+      font-size: 0.75rem;
+      line-height: 1.4;
+    }
+
+    /* ====== 研究经历卡片 - 垂直布局 ====== */
+    .research-item {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .research-logo {
+      width: 55px;
+      height: 55px;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+      border-radius: 10px;
+    }
+
+    .research-details {
+      width: 100%;
+    }
+
+    .research-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.25rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .research-header > div {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .research-institution {
+      font-size: 0.92rem;
+    }
+
+    .research-role {
+      font-size: 0.68rem;
+      padding: 0.1rem 0.35rem;
+      margin-left: 0;
+    }
+
+    .research-period {
+      font-size: 0.68rem;
+      padding: 0.12rem 0.4rem;
+      margin-left: 0;
+    }
+
+    /* Lab 和 Co-Authors 垂直堆叠 */
+    .research-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+      font-size: 0.75rem;
+    }
+
+    .research-lab {
+      min-width: unset;
+      width: 100%;
+      white-space: normal;
+    }
+
+    .research-info-separator {
+      display: none;
+    }
+
+    .research-coauthors {
+      width: 100%;
+    }
+
+    .research-output-section {
+      margin-top: 0.3rem;
+      padding-top: 0.3rem;
+    }
+
+    .research-output-section strong {
+      font-size: 0.75rem;
+    }
+
+    .research-output-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      margin-top: 0.2rem;
+    }
+
+    .research-output-list li {
+      font-size: 0.7rem;
+      padding: 0.1rem 0.4rem;
+      margin-right: 0;
+      margin-top: 0;
+    }
+
+    /* ====== 新闻动态 ====== */
+    .news {
+      max-height: 180px;
+    }
+
+    .news table tr {
+      padding: 0.3rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .news table tr th {
+      font-size: 0.65rem;
+      min-width: auto;
+      max-width: none;
+      padding: 0.1rem 0.4rem;
+      margin-right: 0;
+      margin-bottom: 0.2rem;
+    }
+
+    .news table tr td {
+      font-size: 0.78rem;
+      display: block;
+      width: 100%;
+    }
+
+    /* ====== Publications - 完全重排 ====== */
+    .publications .bibliography li {
+      padding: 0.5rem 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .publications .bibliography li .row {
+      flex-direction: column;
+    }
+
+    .publications .title {
+      font-size: 0.88rem;
+      line-height: 1.4;
+      margin-bottom: 0.2rem;
+    }
+
+    .publications .author {
+      font-size: 0.76rem;
+      line-height: 1.35;
+      margin-bottom: 0.15rem;
+    }
+
+    .publications .periodical {
+      font-size: 0.74rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .publications .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem;
+      margin-top: 0.25rem;
+    }
+
+    .publications .links a {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      min-height: 30px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* ====== 荣誉奖项 - 保留滚动条 ====== */
+    .honors-section {
+      max-height: 140px;
+      overflow-y: auto;
+    }
+
+    .honors-list li {
+      padding: 0.4rem 0.4rem 0.4rem 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .honors-list li::before {
+      font-size: 0.75rem;
+      left: 0.3rem;
+      top: 0.4rem;
+    }
+
+    .honor-title {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+
+    .honor-title strong {
+      font-size: 0.85rem;
+    }
+
+    .year-right {
+      font-size: 0.65rem;
+      padding: 0.1rem 0.35rem;
+      margin-left: 0;
+    }
+
+    .honor-details {
+      font-size: 0.72rem;
+      margin-top: 0.1rem;
+    }
+
+    /* ====== 助教经历 - 保留滚动条 ====== */
+    .teaching-section {
+      max-height: 140px;
+      overflow-y: auto;
+    }
+
+    .teaching-list li {
+      padding: 0.4rem 0.4rem 0.4rem 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .teaching-list li::before {
+      font-size: 0.75rem;
+      left: 0.3rem;
+      top: 0.4rem;
+    }
+
+    .course-title {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.2rem;
+    }
+
+    .course-title strong {
+      font-size: 0.85rem;
+    }
+
+    .term-right {
+      font-size: 0.65rem;
+      padding: 0.1rem 0.35rem;
+      margin-left: 0;
+    }
+
+    .course-details {
+      font-size: 0.72rem;
+      margin-top: 0.1rem;
+    }
+
+    /* 底部社交图标 */
+    .contact-icons a {
+      width: 36px !important;
+      height: 36px !important;
+      font-size: 1.1rem !important;
+    }
+
+    /* 禁用悬停动画效果（触屏设备无意义） */
+    .education-item:hover,
+    .research-item:hover,
+    .publications .bibliography li:hover {
+      transform: none;
+    }
+
+    .education-item:hover .education-logo,
+    .research-item:hover .research-logo {
+      transform: none;
+    }
+
+    .honors-list li:hover,
+    .teaching-list li:hover {
+      padding-left: 1.5rem;
+    }
+
+    /* 复制提示优化 */
+    .copy-toast {
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  /* ========== 超小屏幕（< 480px）========== */
+  @media (max-width: 480px) {
+    .post-title {
+      font-size: 1.3rem;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+    }
+
+    /* 教育卡片 */
+    .education-logo {
+      width: 45px;
+      height: 45px;
+    }
+
+    .education-school {
+      font-size: 0.85rem;
+    }
+
+    .education-degree {
+      font-size: 0.62rem;
+    }
+
+    .education-year {
+      font-size: 0.62rem;
+    }
+
+    /* 研究卡片 */
+    .research-logo {
+      width: 48px;
+      height: 48px;
+    }
+
+    .research-institution {
+      font-size: 0.85rem;
+    }
+
+    .research-role {
+      font-size: 0.62rem;
+    }
+
+    .research-period {
+      font-size: 0.62rem;
+    }
+
+    /* Publications */
+    .publications .title {
+      font-size: 0.82rem;
+    }
+
+    .publications .author {
+      font-size: 0.72rem;
+    }
+
+    .publications .periodical {
+      font-size: 0.7rem;
+    }
+
+    .publications .links a {
+      font-size: 0.65rem;
+      padding: 0.12rem 0.35rem;
+      min-height: 28px;
+    }
+
+    /* 荣誉和助教 */
+    .honor-title strong,
+    .course-title strong {
+      font-size: 0.8rem;
+    }
+
+    .honor-details,
+    .course-details {
+      font-size: 0.68rem;
+    }
+  }
+
+  /* ========================================== */
+  /* ========== 暗色模式 - 完整重设计 ========== */
+  /* ========================================== */
+  /* 
+   * 设计原则：与亮色模式形成优雅对偶
+   * 亮色：浅色背景 + 深色文字 + 蓝色强调
+   * 暗色：深色背景 + 浅色文字 + 青蓝色强调
+   * 
+   * 主色调对偶：
+   * - 亮色主色 #00A1E9 → 暗色主色 #5ec8f2 (更亮的青蓝)
+   * - 亮色强调 #764ba2 → 暗色强调 #b388ff (淡紫)
+   * - 亮色背景 #fdfbfb → 暗色背景 #0d1117 (GitHub Dark)
+   * - 亮色卡片 rgba(255,255,255,0.65) → 暗色卡片 rgba(22,27,34,0.85)
+   */
+
+  /* ===== 全局基础 ===== */
+  html[data-theme="dark"] body {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%);
+    animation: backgroundShiftDark 20s ease-in-out infinite;
+  }
+
+  html[data-theme="dark"] body::before {
+    background: radial-gradient(circle, rgba(94, 200, 242, 0.12) 0%, transparent 70%);
+  }
+
+  html[data-theme="dark"] body::after {
+    background: radial-gradient(circle, rgba(179, 136, 255, 0.1) 0%, transparent 70%);
+  }
+
+  html[data-theme="dark"] .post {
+    color: #c9d1d9;
+  }
+
+  html[data-theme="dark"] article > .clearfix p,
+  html[data-theme="dark"] article > .clearfix .interest-card {
+    color: #c9d1d9;
+  }
+
+  /* ===== 页面标题 ===== */
+  html[data-theme="dark"] .post-title {
+    color: #e6edf3;
+  }
+
+  html[data-theme="dark"] .post-title strong {
+    color: #ffffff;
+  }
+
+  html[data-theme="dark"] .desc {
+    color: #8b949e;
+  }
+
+  html[data-theme="dark"] .desc a {
+    color: #5ec8f2;
+  }
+
+  html[data-theme="dark"] .desc a:hover {
+    color: #79d4f8;
+  }
+
+  /* ===== 社交图标 ===== */
+  html[data-theme="dark"] .social-icons-header a {
+    color: #8b949e;
+    border-color: rgba(139, 148, 158, 0.3);
+  }
+
+  html[data-theme="dark"] .social-icons-header a:hover {
+    color: #5ec8f2;
+    border-color: rgba(94, 200, 242, 0.5);
+    background: rgba(94, 200, 242, 0.1);
+  }
+
+  /* ===== 章节标题 ===== */
+  html[data-theme="dark"] .section-title {
+    color: #e6edf3;
+    border-bottom-color: rgba(94, 200, 242, 0.2);
+  }
+
+  html[data-theme="dark"] .section-title::before {
+    background: linear-gradient(135deg, #5ec8f2 0%, #b388ff 100%);
+  }
+
+  html[data-theme="dark"] .section-title:hover {
+    color: #5ec8f2;
+  }
+
+  /* ===== 教育经历卡片 ===== */
+  html[data-theme="dark"] .education-item {
+    background: rgba(22, 27, 34, 0.85);
+    border-color: rgba(48, 54, 61, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  html[data-theme="dark"] .education-item::before {
+    background: linear-gradient(135deg, rgba(94, 200, 242, 0.08) 0%, rgba(179, 136, 255, 0.08) 100%);
+  }
+
+  html[data-theme="dark"] .education-item:hover {
+    background: rgba(33, 38, 45, 0.95);
+    border-color: rgba(94, 200, 242, 0.4);
+    box-shadow: 0 4px 16px rgba(94, 200, 242, 0.15);
+  }
+
+  html[data-theme="dark"] .education-school {
+    color: #e6edf3;
+  }
+
+  html[data-theme="dark"] .education-item:hover .education-school {
+    color: #5ec8f2;
+  }
+
+  /* 时间标签 - 统一青蓝渐变 */
+  html[data-theme="dark"] .education-year {
+    background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+  }
+
+  /* 学位标签 - 绿色系 */
+  html[data-theme="dark"] .education-degree {
+    background: rgba(63, 185, 80, 0.15);
+    color: #7ee787;
+    border: 1px solid rgba(63, 185, 80, 0.3);
+  }
+
+  html[data-theme="dark"] .education-college {
+    color: #8b949e;
+  }
+
+  html[data-theme="dark"] .education-intro {
+    color: #b1bac4;
+  }
+
+  /* ===== 研究经历卡片 ===== */
+  html[data-theme="dark"] .research-item {
+    background: rgba(22, 27, 34, 0.85);
+    border-color: rgba(48, 54, 61, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  html[data-theme="dark"] .research-item::before {
+    background: linear-gradient(135deg, rgba(94, 200, 242, 0.08) 0%, rgba(179, 136, 255, 0.08) 100%);
+  }
+
+  html[data-theme="dark"] .research-item:hover {
+    background: rgba(33, 38, 45, 0.95);
+    border-color: rgba(94, 200, 242, 0.4);
+    box-shadow: 0 4px 16px rgba(94, 200, 242, 0.15);
+  }
+
+  html[data-theme="dark"] .research-institution {
+    color: #e6edf3;
+  }
+
+  /* 时间标签 - 统一青蓝渐变 */
+  html[data-theme="dark"] .research-period {
+    background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+  }
+
+  /* 角色标签 - 橙红色系 */
+  html[data-theme="dark"] .research-role {
+    background: rgba(255, 123, 114, 0.15);
+    color: #ffa198;
+    border: 1px solid rgba(255, 123, 114, 0.3);
+  }
+
+  html[data-theme="dark"] .research-lab,
+  html[data-theme="dark"] .research-coauthors {
+    color: #b1bac4;
+  }
+
+  html[data-theme="dark"] .research-lab strong,
+  html[data-theme="dark"] .research-coauthors strong {
+    color: #e6edf3;
+  }
+
+  html[data-theme="dark"] .research-lab a {
+    color: #5ec8f2;
+  }
+
+  html[data-theme="dark"] .research-lab a:hover {
+    color: #79d4f8;
+  }
+
+  html[data-theme="dark"] .research-info-separator {
+    color: #484f58;
+  }
+
+  html[data-theme="dark"] .research-output-section {
+    border-top-color: rgba(48, 54, 61, 0.8);
+  }
+
+  html[data-theme="dark"] .research-output-section strong {
+    color: #7ee787;
+  }
+
+  html[data-theme="dark"] .research-output-list li {
+    background: rgba(63, 185, 80, 0.12);
+    border-color: rgba(63, 185, 80, 0.25);
+    color: #7ee787;
+  }
+
+  html[data-theme="dark"] .research-output-list li a {
+    color: #7ee787;
+  }
+
+  html[data-theme="dark"] .research-output-list li:hover {
+    background: rgba(63, 185, 80, 0.2);
+    box-shadow: 0 2px 8px rgba(63, 185, 80, 0.2);
+  }
+
+  html[data-theme="dark"] .research-output-list li:hover a {
+    color: #a5f3b4;
+  }
+
+  /* ===== 新闻动态 ===== */
+  html[data-theme="dark"] .news::-webkit-scrollbar-thumb {
+    background: #30363d;
+  }
+
+  html[data-theme="dark"] .news::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+  }
+
+  html[data-theme="dark"] .news table tr {
+    border-bottom-color: rgba(48, 54, 61, 0.6);
+  }
+
+  html[data-theme="dark"] .news table tr:hover {
+    background: rgba(48, 54, 61, 0.3);
+  }
+
+  /* 日期标签 - 统一青蓝渐变 */
+  html[data-theme="dark"] .news table tr th {
+    background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+  }
+
+  html[data-theme="dark"] .news table tr td {
+    color: #c9d1d9;
+  }
+
+  html[data-theme="dark"] .news table tr td a {
+    color: #5ec8f2;
+  }
+
+  html[data-theme="dark"] .news table tr td a:hover {
+    color: #79d4f8;
+  }
+
+  html[data-theme="dark"] .news table tr td em {
+    color: #8b949e;
+  }
+
+  /* ===== Publications ===== */
+  html[data-theme="dark"] .publications .bibliography li {
+    background: rgba(22, 27, 34, 0.85);
+    border-color: rgba(48, 54, 61, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  html[data-theme="dark"] .publications .bibliography li::before {
+    background: linear-gradient(135deg, rgba(94, 200, 242, 0.08) 0%, rgba(179, 136, 255, 0.08) 100%);
+  }
+
+  html[data-theme="dark"] .publications .bibliography li:hover {
+    background: rgba(33, 38, 45, 0.95);
+    border-color: rgba(94, 200, 242, 0.4);
+    box-shadow: 0 4px 16px rgba(94, 200, 242, 0.15);
+  }
+
+  html[data-theme="dark"] .publications .title {
+    color: #e6edf3;
+  }
+
+  html[data-theme="dark"] .publications .author {
+    color: #b1bac4;
+  }
+
+  html[data-theme="dark"] .publications .author em {
+    background: linear-gradient(135deg, #5ec8f2 0%, #b388ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  html[data-theme="dark"] .publications .periodical {
+    color: #8b949e;
+  }
+
+  /* 链接按钮 - 通用 */
+  html[data-theme="dark"] .publications .links a {
+    background: rgba(48, 54, 61, 0.6);
+    color: #b1bac4;
+    border-color: rgba(48, 54, 61, 0.8);
+  }
+
+  html[data-theme="dark"] .publications .links a:hover {
+    background: linear-gradient(135deg, #5ec8f2 0%, #3db8e5 100%);
+    color: #ffffff;
+    border-color: transparent;
+    box-shadow: 0 4px 12px rgba(94, 200, 242, 0.35);
+  }
+
+  /* PDF/arXiv 按钮 - 红色系 */
+  html[data-theme="dark"] .publications .links a[href*="pdf"],
+  html[data-theme="dark"] .publications .links a[href*="arxiv"] {
+    background: rgba(255, 123, 114, 0.12);
+    color: #ffa198;
+    border-color: rgba(255, 123, 114, 0.25);
+  }
+
+  html[data-theme="dark"] .publications .links a[href*="pdf"]:hover,
+  html[data-theme="dark"] .publications .links a[href*="arxiv"]:hover {
+    background: linear-gradient(135deg, #ff7b72 0%, #f85149 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(248, 81, 73, 0.35);
+  }
+
+  /* GitHub 按钮 - 灰色系 */
+  html[data-theme="dark"] .publications .links a[href*="github"] {
+    background: rgba(110, 118, 129, 0.15);
+    color: #c9d1d9;
+    border-color: rgba(110, 118, 129, 0.3);
+  }
+
+  html[data-theme="dark"] .publications .links a[href*="github"]:hover {
+    background: linear-gradient(135deg, #6e7681 0%, #57606a 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(110, 118, 129, 0.35);
+  }
+
+  /* Website 按钮 - 绿色系 */
+  html[data-theme="dark"] .publications .links a[href*="xiaofeng-tan.github.io/projects"],
+  html[data-theme="dark"] .publications .links a[href*="wengwanjiang.github.io"] {
+    background: rgba(63, 185, 80, 0.12);
+    color: #7ee787;
+    border-color: rgba(63, 185, 80, 0.25);
+  }
+
+  html[data-theme="dark"] .publications .links a[href*="xiaofeng-tan.github.io/projects"]:hover,
+  html[data-theme="dark"] .publications .links a[href*="wengwanjiang.github.io"]:hover {
+    background: linear-gradient(135deg, #3fb950 0%, #2ea043 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(63, 185, 80, 0.35);
+  }
+
+  /* Abstract/Bib 按钮 - 紫色系 */
+  html[data-theme="dark"] .publications .links a.abstract,
+  html[data-theme="dark"] .publications .links a.bibtex {
+    background: rgba(179, 136, 255, 0.12);
+    color: #d2a8ff;
+    border-color: rgba(179, 136, 255, 0.25);
+  }
+
+  html[data-theme="dark"] .publications .links a.abstract:hover,
+  html[data-theme="dark"] .publications .links a.bibtex:hover {
+    background: linear-gradient(135deg, #b388ff 0%, #a371f7 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(179, 136, 255, 0.35);
+  }
+
+  /* ===== 荣誉奖项 ===== */
+  html[data-theme="dark"] .honors-section::-webkit-scrollbar-thumb {
+    background: #30363d;
+  }
+
+  html[data-theme="dark"] .honors-section::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+  }
+
+  html[data-theme="dark"] .honors-list li {
+    background: rgba(210, 168, 0, 0.06);
+    border-left-color: rgba(210, 168, 0, 0.5);
+  }
+
+  html[data-theme="dark"] .honors-list li:hover {
+    background: rgba(210, 168, 0, 0.12);
+    border-left-color: rgba(210, 168, 0, 0.8);
+  }
+
+  html[data-theme="dark"] .honor-title strong {
+    color: #e6edf3;
+  }
+
+  /* 时间标签 - 统一青蓝渐变 */
+  html[data-theme="dark"] .year-right {
+    background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+  }
+
+  html[data-theme="dark"] .honor-details {
+    color: #b1bac4;
+  }
+
+  /* ===== 助教经历 ===== */
+  html[data-theme="dark"] .teaching-section::-webkit-scrollbar-thumb {
+    background: #30363d;
+  }
+
+  html[data-theme="dark"] .teaching-section::-webkit-scrollbar-thumb:hover {
+    background: #484f58;
+  }
+
+  html[data-theme="dark"] .teaching-list li {
+    background: rgba(94, 200, 242, 0.06);
+    border-left-color: rgba(94, 200, 242, 0.5);
+  }
+
+  html[data-theme="dark"] .teaching-list li:hover {
+    background: rgba(94, 200, 242, 0.12);
+    border-left-color: rgba(94, 200, 242, 0.8);
+  }
+
+  html[data-theme="dark"] .course-title strong {
+    color: #e6edf3;
+  }
+
+  /* 时间标签 - 统一青蓝渐变 */
+  html[data-theme="dark"] .term-right {
+    background: linear-gradient(135deg, #1a7f9e 0%, #238eb8 100%) !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    border: none !important;
+    box-shadow: 0 2px 6px rgba(35, 142, 184, 0.4);
+  }
+
+  html[data-theme="dark"] .course-details {
+    color: #b1bac4;
+  }
+
+  /* ===== 爱好 ===== */
+  html[data-theme="dark"] .hobbies-intro {
+    color: #b1bac4;
+  }
+
+  html[data-theme="dark"] .hobbies-intro a {
+    color: #5ec8f2;
+  }
+
+  html[data-theme="dark"] .hobbies-intro a:hover {
+    color: #79d4f8;
+  }
+
+  html[data-theme="dark"] .hobbies-intro em {
+    color: #d2a8ff;
+  }
+
+  html[data-theme="dark"] .hobby-item {
+    background: rgba(22, 27, 34, 0.85);
+    color: #b1bac4;
+    border-color: rgba(48, 54, 61, 0.8);
+  }
+
+  html[data-theme="dark"] .hobby-item:hover {
+    background: rgba(94, 200, 242, 0.12);
+    border-color: rgba(94, 200, 242, 0.4);
+    color: #5ec8f2;
+    box-shadow: 0 3px 10px rgba(94, 200, 242, 0.2);
+  }
+
+  /* ===== 链接通用样式 ===== */
+  html[data-theme="dark"] article > .clearfix a {
+    color: #5ec8f2;
+  }
+
+  html[data-theme="dark"] article > .clearfix a:hover {
+    color: #79d4f8;
+  }
+
+  /* ===== 底部社交图标 ===== */
+  html[data-theme="dark"] .contact-icons a {
+    color: #8b949e !important;
+    border-color: rgba(48, 54, 61, 0.8) !important;
+  }
+
+  html[data-theme="dark"] .contact-icons a:hover {
+    color: #5ec8f2 !important;
+    border-color: rgba(94, 200, 242, 0.5) !important;
+    background: rgba(94, 200, 242, 0.1) !important;
+  }
+
+  html[data-theme="dark"] .contact-note {
+    color: #8b949e;
+  }
+
+  /* ===== 研究兴趣卡片 ===== */
+  html[data-theme="dark"] .interest-card {
+    color: #c9d1d9;
+  }
+
+  html[data-theme="dark"] .interest-card strong {
+    background: rgba(94, 200, 242, 0.15);
+    color: #5ec8f2;
+  }
+
+  html[data-theme="dark"] .interest-card em {
+    color: #d2a8ff;
+  }
+
+  html[data-theme="dark"] .interest-card .copyable {
+    color: #5ec8f2;
+    border-bottom-color: rgba(94, 200, 242, 0.4);
+  }
+
+  html[data-theme="dark"] .interest-card .copyable:hover {
+    color: #79d4f8;
+  }
+
+  html[data-theme="dark"] .interest-card .copyable i {
+    color: #5ec8f2;
+  }
+
+  html[data-theme="dark"] .interest-card .doraemon-text {
+    color: #5ec8f2;
+  }
+
+  html[data-theme="dark"] .interest-card .doraemon-text em {
+    color: #5ec8f2;
+  }
+
+  /* ===== 复制提示 ===== */
+  html[data-theme="dark"] .copy-toast {
+    background: linear-gradient(135deg, #5ec8f2 0%, #3db8e5 100%);
+    color: #0d1117;
+  }
+
+  /* ===== Footer ===== */
+  /* 亮色模式 Footer */
+  html[data-theme="light"] footer.sticky-bottom,
+  html[data-theme="light"] footer.fixed-bottom,
+  html:not([data-theme="dark"]) footer.sticky-bottom,
+  html:not([data-theme="dark"]) footer.fixed-bottom {
+    background-color: #f8f9fa !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+  }
+
+  html[data-theme="light"] footer.sticky-bottom .container,
+  html[data-theme="light"] footer.fixed-bottom .container,
+  html:not([data-theme="dark"]) footer.sticky-bottom .container,
+  html:not([data-theme="dark"]) footer.fixed-bottom .container {
+    color: #5a6c7d !important;
+  }
+
+  html[data-theme="light"] footer.sticky-bottom .container a,
+  html[data-theme="light"] footer.fixed-bottom .container a,
+  html:not([data-theme="dark"]) footer.sticky-bottom .container a,
+  html:not([data-theme="dark"]) footer.fixed-bottom .container a {
+    color: #00A1E9 !important;
+  }
+
+  html[data-theme="light"] footer.sticky-bottom .container a:hover,
+  html[data-theme="light"] footer.fixed-bottom .container a:hover,
+  html:not([data-theme="dark"]) footer.sticky-bottom .container a:hover,
+  html:not([data-theme="dark"]) footer.fixed-bottom .container a:hover {
+    color: #764ba2 !important;
+  }
+
+  /* 暗色模式 Footer */
+  html[data-theme="dark"] footer.sticky-bottom,
+  html[data-theme="dark"] footer.fixed-bottom {
+    background-color: #0d1117 !important;
+    border-top: 1px solid rgba(48, 54, 61, 0.8) !important;
+  }
+
+  html[data-theme="dark"] footer.sticky-bottom .container,
+  html[data-theme="dark"] footer.fixed-bottom .container {
+    color: #8b949e !important;
+  }
+
+  html[data-theme="dark"] footer.sticky-bottom .container a,
+  html[data-theme="dark"] footer.fixed-bottom .container a {
+    color: #5ec8f2 !important;
+  }
+
+  html[data-theme="dark"] footer.sticky-bottom .container a:hover,
+  html[data-theme="dark"] footer.fixed-bottom .container a:hover {
+    color: #79d4f8 !important;
+  }
+</style>
+
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {% if site.title == 'blank' %}
+        <strong><span>{{ site.first_name }}</span></strong>
+        <span>{{ site.last_name }}</span>
+        <span>({{ site.Chinese_name }})</span>
+      {% else %}
+        {{ site.title }}
+      {% endif %}
+    </h1>
+
+    
+    <!-- 社交图标 -->
+    <div class="social-icons-header">
+      {% if site.email %}
+        <a href="mailto:{{ site.email }}" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      {% endif %}
+      {% if site.github_username %}
+        <a href="https://github.com/{{ site.github_username }}" title="GitHub" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      {% endif %}
+      {% if site.scholar_userid %}
+        <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}" title="Google Scholar" target="_blank">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      {% endif %}
+      {% if site.orcid_id %}
+        <a href="https://orcid.org/{{ site.orcid_id }}" title="ORCID" target="_blank">
+          <i class="fab fa-orcid"></i>
+        </a>
+      {% endif %}
+      {% if site.linkedin_username %}
+        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      {% endif %}
+      {% if site.twitter_username %}
+        <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      {% endif %}
+    </div>
+  </header>
+</div>
+
+<article>
+  {% if page.profile %}
+    <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      {% if page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% if page.profile.image_circular %}
+          {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+        {% else %}
+          {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+        {% endif %}
+        {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+        {% include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image cache_bust=true %}
+      {% endif %}
+      {% if page.profile.more_info %}
+        <div class="more-info">{{ page.profile.more_info }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="clearfix">{{ content }}</div>
+
+  <!-- News -->
+  {% if page.news and site.announcements.enabled %}
+    <h2 class="section-title">
+      <span>👀 News</span>
+    </h2>
+    {% include news.liquid %}
+  {% endif %}
+
+  <!-- Research Experience -->
+  <div class="research-section">
+    <h2 class="section-title">
+      <span>🔬 Research Experience</span>
+    </h2>
+
+    <ul class="research-list">
+      {% for research in site.research %}
+        <li class="research-item">
+          <img src="{{ research.logo }}" alt="{{ research.institution }} logo" class="research-logo">
+          <div class="research-details">
+            <!-- 机构、身份和时间 -->
+            <div class="research-header">
+              <div>
+                <span class="research-institution">{{ research.institution }}</span>
+                <span class="research-role">{{ research.role }}</span>
+              </div>
+              <span class="research-period">{{ research.period }}</span>
+            </div>
+            
+            <!-- 实验室和合作者 -->
+            <div class="research-info">
+              <div class="research-lab">
+                <strong>Lab:</strong> 
+                {% assign lab = research.lab %}
+                {% if lab.url and lab.url != "" %}
+                  <a href="{{ lab.url }}" target="_blank">{{ lab.name }}</a>
+                {% elsif lab.name %}
+                  {{ lab.name }}
+                {% else %}
+                  {{ lab }}
+                {% endif %}
+              </div>
+              <!-- Co-Authors 已隐藏 -->
+              <!-- <span class="research-info-separator">|</span>
+              <div class="research-coauthors">
+                <strong>Co-Authors:</strong> 
+                {% if research.co-authors %}
+                  {{ research.co-authors | join: ", " }}
+                {% else %}
+                  N/A
+                {% endif %}
+              </div> -->
+            </div>
+
+            <!-- 产出（横向排列）-->
+            {% if research.outputs %}
+              <div class="research-output-section">
+                <strong>Research Works:</strong>
+                <ul class="research-output-list">
+                  {% for output in research.outputs %}
+                    <li>
+                      {% if output.url and output.url != "" %}
+                        <a href="{{ output.url }}" target="_blank">{{ output.name }}</a>
+                      {% else %}
+                        {{ output.name }}
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <!-- Selected papers -->
+  {% if page.selected_papers %}
+    <h2 class="section-title">
+      <span>📖 Selected Publications</span>
+    </h2>
+    <p style="color: #5a6c7d; font-size: 0.85rem; margin-top: -0.5rem; margin-bottom: 0.8rem;">
+    </p>
+    {% include selected_papers.liquid %}
+  {% endif %}
+
+  <!-- Selected Honors -->
+  {% if site.latest_posts.enabled %}
+    <h2 class="section-title">
+      <span>🌟 Selected Honors & Awards</span>
+    </h2>
+    <div class="honors-section">
+      <ul class="honors-list">
+        <li>
+          <div class="honor-title">
+            <strong><span>UWA Full Scholarship</span></strong>
+            <span class="year-right">2024</span>
+          </div>
+          <div class="honor-details">
+            Full scholarship for PhD studies at University of Western Australia
+          </div>
+        </li>
+      </ul>
+    </div>
+  {% endif %}
+
+  <!-- Social -->
+  {% if page.social %}
+    <div class="social">
+      <div class="contact-icons">{% include social.liquid %}</div>
+      <div class="contact-note">{{ site.contact_note }}</div>
+    </div>
+  {% endif %}
+
+  {% if site.newsletter.enabled and site.footer_fixed %}
+    {% include scripts/newsletter.liquid center=true %}
+  {% endif %}
+</article>
+

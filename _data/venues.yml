@@ -1,0 +1,25 @@
+"AJP":
+  url: https://aapt.scitation.org/journal/ajp
+  color: "#00369f"
+
+"PhysRev":
+  url: https://journals.aps.org/
+
+"Vision":
+  color: "#009f36"
+
+"NeurIPS":
+  url: https://neurips.cc/
+  color: "#B8336A"
+
+"AAAI":
+  url: https://aaai.org/
+  color: "#00A1E9"
+
+"TKDE":
+  url: https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=69
+  color: "#2E7D32"
+
+"IJAR":
+  url: https://www.sciencedirect.com/journal/international-journal-of-approximate-reasoning
+  color: "#5C6BC0"
