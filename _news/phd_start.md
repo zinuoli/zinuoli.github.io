@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🎓 Started my PhD in Computer Science at the **University of Western Australia** under the supervision of Prof. Mohammed Bennamou, Prof. Farid Boussaid and Senior Lec. Qiuhong Ke.
+🎓 Started my PhD in Computer Science at the **University of Western Australia**.
