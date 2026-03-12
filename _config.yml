@@ -703,10 +703,22 @@ education:
     intro: First Class Honours
 
 research:
-- institution: "Tencent"
+- institution: "Tencent Hunyuan"
+  logo: "/assets/img/hunyuan-logo.jpg"
+  role: "Research Intern"
+  period: "2026.03 - Present"
+  lab:
+    name: "Tencent HY"
+    url: "https://hunyuan.tencent.com/visual"
+  co-authors:
+    - ""
+  outputs:
+    - name: "Video understanding; Reinforcement Learning"
+
+- institution: "Tencent Youtu Lab"
   logo: "/assets/img/tencent-youtu-logo.png"
   role: "Research Intern"
-  period: "2025 - Present"
+  period: "2025.03 - 2026.03"
   lab:
     name: "Tencent Youtu Lab"
     url: "https://open.youtu.qq.com"
@@ -718,7 +730,7 @@ research:
 - institution: "University of Western Australia"
   logo: "/assets/img/uwa.jpg"
   role: "PhD Student"
-  period: "2024 - Present"
+  period: "2024.03 - Present"
   lab:
     name: "Department of Computer Science and Software Engineering"
     url: "https://www.uwa.edu.au/schools/physics-mathematics-computing/department-of-computer-science-and-software-engineering"
