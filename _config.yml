@@ -718,7 +718,7 @@ research:
 - institution: "Tencent Youtu Lab"
   logo: "/assets/img/tencent-youtu-logo.png"
   role: "Research Intern"
-  period: "2025.03 - 2026.03"
+  period: "2025.10 - 2026.03"
   lab:
     name: "Tencent Youtu Lab"
     url: "https://open.youtu.qq.com"
@@ -743,7 +743,7 @@ research:
 - institution: "University of Macau"
   logo: "/assets/img/um.png"
   role: "Research Assistant"
-  period: "2022 - 2024"
+  period: "2022.09 - 2024.03"
   lab:
     name: "University of Macau"
     url: "https://www.um.edu.mo/"
@@ -756,7 +756,7 @@ research:
 - institution: "Chinese Academy of Sciences, SIAT Shenzhen"
   logo: "/assets/img/siat.jpg"
   role: "Research Assistant"
-  period: "2022 - 2024"
+  period: "2022.10 - 2024.03"
   lab:
     name: "Shenzhen Institute of Advanced Technology"
     url: "http://english.siat.cas.cn/"
