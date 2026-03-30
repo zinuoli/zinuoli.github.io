@@ -708,7 +708,7 @@ research:
   role: "Qingyun Research Intern"
   period: "2026.03 - Present"
   lab:
-    name: "Tencent HY"
+    name: "Foundation Model Center"
     url: "https://hunyuan.tencent.com/visual"
   co-authors:
     - ""
@@ -726,19 +726,6 @@ research:
     - ""
   outputs:
     - name: "Video understanding; Reinforcement Learning"
-
-- institution: "University of Western Australia"
-  logo: "/assets/img/uwa.jpg"
-  role: "PhD Student"
-  period: "2024.03 - Present"
-  lab:
-    name: "Department of Computer Science and Software Engineering"
-    url: "https://www.uwa.edu.au/schools/physics-mathematics-computing/department-of-computer-science-and-software-engineering"
-  co-authors:
-    - ""
-  outputs:
-    - name: "Video Understanding; Multimodal Large Language Models; RLVR"
-      url: ""
 
 - institution: "University of Macau"
   logo: "/assets/img/um.png"
